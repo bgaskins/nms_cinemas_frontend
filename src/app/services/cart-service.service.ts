@@ -13,7 +13,6 @@ export class CartServiceService {
 
   headers = new HttpHeaders().set('Content-Type', 'application/json');
 
-
   //inject the DI
   constructor(private http: HttpClient) { }
 

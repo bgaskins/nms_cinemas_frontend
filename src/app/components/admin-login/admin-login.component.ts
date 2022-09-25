@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
+import { HardcodedAuthenticationService } from 'src/app/services/hardcoded-authentication.service';
 
 @Component({
   selector: 'app-admin-login',
@@ -9,19 +10,26 @@ import { Router } from '@angular/router';
 })
 export class AdminLoginComponent implements OnInit {
 
-  public adminLogin: FormGroup;
+  username = "movies";
+  password = '';
+  errorMessage = 'Invalid Credentials';
+  invalidLogin = false;
 
-  constructor(private formBuilder: FormBuilder, private router: Router) {
-    this.adminLogin = this.formBuilder.group({
-      email: [''],
-      password: ['']
-    });
+  constructor(private formBuilder: FormBuilder, private router: Router,
+    private hardcodedAuthenticationService: HardcodedAuthenticationService) {
+
   }
 
-  ngOnInit(): void {
+  ngOnInit() {
   }
 
-  onSubmit() {
-    this.router.navigate(['/admin-dashboard']);
+  handleLogin() {
+    if (this.hardcodedAuthenticationService.authenticate(this.username, this.password)) {
+      //redirect to the welcome page
+      this.router.navigate(['home']);
+      this.invalidLogin = false;
+    } else {
+      this.invalidLogin = true;
+    }
   }
 }

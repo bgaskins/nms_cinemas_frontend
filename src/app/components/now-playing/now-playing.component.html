@@ -1,1 +1,88 @@
-<h3>now playing</h3>
+<div class="container">
+    <app-user-header></app-user-header>
+</div>
+
+<!--Search Movie Times-->
+<div class="container">
+    <div class="row">
+        <h3>Search Movie Times</h3>
+    </div>
+</div>
+<div class="container">
+    <div class="form-group">
+        <input type="text" class="form-control mb-4 mt-3" placeholder="Search" [(ngModel)]="query" />
+    </div>
+</div>
+<div class="container">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Time</th>
+                <th>Showing</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let movies of movies | searchMovie: query">
+                <td>{{movies.title}}</td>
+                <td>{{movies.time}}</td>
+                <td>{{movies.showing}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<!--Book New Releases-->
+<div class="row">
+    <div class="col-sm-6">
+        <div class="card" style="width: 18rem;">
+            <img src="..." class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                    the card's content.</p>
+                <a href="/now-playing" class="btn btn-primary">Book Tickets</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6">
+        <div class="card" style="width: 18rem;">
+            <img src="..." class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                    the card's content.</p>
+                <a href="/now-playing" class="btn btn-primary">Book Tickets</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-6">
+        <div class="card" style="width: 18rem;">
+            <img src="..." class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                    the card's content.</p>
+                <a href="/now-playing" class="btn btn-primary">Book Tickets</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6">
+        <div class="card" style="width: 18rem;">
+            <img src="..." class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                    the card's content.</p>
+                <a href="/now-playing" class="btn btn-primary">Book Tickets</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Footer-->
+<div class="container-fluid">
+    <app-footer></app-footer>
+</div>

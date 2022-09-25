@@ -1,23 +1,10 @@
-<div class="container-fluid col-md-6 offset-md-3">
-    <h3>Admin Account Login</h3>
-    <form class="admin-login" [formGroup]="adminLogin" (ngSubmit)="onSubmit()">
-        <div class="form-row">
-            <div class="form-group">
-                <label for="email">email</label>
-                <input type="text" class="form-control" name="email" id="email" formControlName="email">
-            </div>
-            <p></p>
+<h1>Admin Login<h1>
 
-            <div class="form-row">
-                <div class="form-group">
-                    <label for="password">Password</label>
-                    <input type="password" class="form-control" name="password" id="password"
-                        formControlName="password">
-                </div>
+        <div class="container">
+            <div class="alert alert-danger" *ngIf='invalidLogin'>{{errorMessage}}</div>
+            <div>
+                User Name: <input type="text" name="username" [(ngModel)]="username">
+                Password: <input type="text" name="password" [(ngModel)]="password">
+                <button (click)=handleLogin() class="btn">Login</button>
             </div>
-            <p></p>
-
-            <button type="submit" class="btn btn-success btn-block">Log In</button>
         </div>
-    </form>
-</div>

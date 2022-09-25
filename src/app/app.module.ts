@@ -13,20 +13,18 @@ import { UserDashboardComponent } from './components/user-dashboard/user-dashboa
 import { UserLoginComponent } from './components/user-login/user-login.component';
 import { UserRegistrationComponent } from './components/user-registration/user-registration.component';
 import { AddToCartComponent } from './components/add-to-cart/add-to-cart.component';
-import { CartComponent } from './components/cart/cart.component';
 import { OrderSummaryComponent } from './components/order-summary/order-summary.component';
 import { UserHeaderComponent } from './components/user-header/user-header.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PaymentComponent } from './components/payment/payment.component';
-import { ConfirmationComponent } from './components/confirmation/confirmation.component';
 import { AdminDashboardComponent } from './components/admin-dashboard/admin-dashboard.component';
-import { RemoveFromCartComponent } from './components/remove-from-cart/remove-from-cart.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { UserLogoutComponent } from './components/user-logout/user-logout.component';
 import { AdminLogoutComponent } from './components/admin-logout/admin-logout.component';
-import { NowPlayingComponent } from './components/now-playing/now-playing.component';
 import { SearchMoviePipe } from './pipes/search-movie.pipe';
 import { ErrorComponent } from './components/error/error.component';
+import { ContactUsComponent } from './components/contact-us/contact-us.component';
+import { NowPlayingComponent } from './components/now-playing/now-playing.component';
 
 @NgModule({
   declarations: [
@@ -42,18 +40,16 @@ import { ErrorComponent } from './components/error/error.component';
     UserLoginComponent,
     UserRegistrationComponent,
     AddToCartComponent,
-    CartComponent,
     OrderSummaryComponent,
     UserHeaderComponent,
     PaymentComponent,
-    RemoveFromCartComponent,
-    ConfirmationComponent,
     FooterComponent,
     UserLogoutComponent,
     AdminLogoutComponent,
-    NowPlayingComponent,
     SearchMoviePipe,
     ErrorComponent,
+    ContactUsComponent,
+    NowPlayingComponent,
 
   ],
 

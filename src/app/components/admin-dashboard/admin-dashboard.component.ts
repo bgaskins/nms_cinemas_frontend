@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { CartServiceService } from 'src/app/services/cart-service.service';
-import { DataServiceService } from 'src/app/services/data-service.service';
 import { MovieServiceService } from 'src/app/services/movie-service.service';
 
 @Component({

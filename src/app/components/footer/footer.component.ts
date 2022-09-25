@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HardcodedAuthenticationService } from 'src/app/services/hardcoded-authentication.service';
 
 @Component({
   selector: 'app-footer',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FooterComponent implements OnInit {
 
-  constructor() { }
+  isUserLoggedIn: boolean = false;
 
-  ngOnInit(): void {
+  constructor(public hardcodedAuthenticationService: HardcodedAuthenticationService) { }
+
+  ngOnInit() {
+    this.isUserLoggedIn = this.hardcodedAuthenticationService.IsUserLoggedIn();
   }
 
 }

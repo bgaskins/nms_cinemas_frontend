@@ -8,13 +8,13 @@
                     class="nav-link">Home</a></li>
         </ul>
         <ul class="navbar-nav navbar-collapse justify-content-end">
-            <li><a *ngIf="!hardcodedAuthenticationService.IsUserLoggedIn()" routerLink="/admin-login"
+            <li><a *ngIf="!hardcodedAuthenticationService.IsUserLoggedIn()" routerLink="/user-login"
                     class="nav-link">Login</a></li>
             <li><a *ngIf="hardcodedAuthenticationService.IsUserLoggedIn()" routerLink="/movie-details"
                     class="nav-link">Now Playing</a></li>
             <li><a *ngIf="hardcodedAuthenticationService.IsUserLoggedIn()" routerLink="/cart" class="nav-link">Cart</a>
             </li>
-            <li><a *ngIf="hardcodedAuthenticationService.IsUserLoggedIn()" routerLink="/admin-logout"
+            <li><a *ngIf="hardcodedAuthenticationService.IsUserLoggedIn()" routerLink="/user-logout"
                     class="nav-link">Logout</a></li>
         </ul>
     </nav>

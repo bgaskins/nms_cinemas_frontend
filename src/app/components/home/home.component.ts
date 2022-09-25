@@ -12,9 +12,4 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
-
-  btnClick() {
-    this.router.navigateByUrl('/now-playing');
-  };
 }
