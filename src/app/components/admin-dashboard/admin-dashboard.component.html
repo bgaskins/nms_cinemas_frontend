@@ -1,0 +1,39 @@
+<div class="container-fluid">
+    <app-admin-header></app-admin-header>
+</div>
+
+<div class="container-fluid">
+    <h3>Admin Dashboard</h3>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Movie Ticket Id</th>
+                <th>Name of the Movie</th>
+                <th>Show Date</th>
+                <th>Show Time</th>
+                <th>Showing Location</th>
+                <th>Price</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let movieTicket of movieTickets">
+                <td>{{ movieTicket.id }}</td>
+                <td>{{ movieTicket.movieName }}</td>
+                <td>{{ movieTicket.showDate }}</td>
+                <td>{{ movieTicket.showTime }}</td>
+                <td>{{ movieTicket.showingLocation }}</td>
+                <td>{{ movieTicket.price }}</td>
+                <td>
+                    <button (click)="updateMovie()" class="btn btn-info">Update Movie Ticket</button>
+                    <button (click)="deleteMovie()" class="btn btn-info">Delete Movie Ticket</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<!--Footer-->
+<div class="container-fluid">
+    <app-footer></app-footer>
+</div>

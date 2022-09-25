@@ -1,0 +1,52 @@
+<div class="container-fluid">
+    <app-user-header></app-user-header>
+</div>
+
+<div class="container-fluid">
+    <h3>Order Summary</h3>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Movie Ticket Id</th>
+                <th>Name of the Movie</th>
+                <th>Show Date</th>
+                <th>Show Time</th>
+                <th>Showing Location</th>
+                <th>Price</th>
+                <th>Payment Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let c of cart">
+                <td>{{ c.id }}</td>
+                <td>{{ c.title }}</td>
+                <td>{{ c.show_date }}</td>
+                <td>{{ c.show_time }}</td>
+                <td>{{ c.auditorium }}</td>
+                <td>{{ c.ticket_price }}</td>
+                <td>Successful</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <p></p>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>User Id</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let u of users">
+                <td>{{ u.id }}</td>
+                <td>{{ u.fname }}</td>
+                <td>{{ u.lname }}</td>
+                <td>{{ u.email }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

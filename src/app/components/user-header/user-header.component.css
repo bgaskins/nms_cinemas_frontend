@@ -1,0 +1,27 @@
+.img-container {
+    width: auto;
+    height: auto;
+    text-align: center;
+}
+
+.navbar {
+    list-style-type: none;
+    background-color: #e4dfc9;
+    margin: 0;
+    margin-top: 3em;
+    padding: 0;
+}
+
+.navbar a {
+    font-size: 16px;
+    font-weight: bold;
+    color: #000000
+}
+
+.navbar .navbar-nav {
+    margin-right: 2em;
+}
+
+#home-btn {
+    margin-left: 1.5em;
+}

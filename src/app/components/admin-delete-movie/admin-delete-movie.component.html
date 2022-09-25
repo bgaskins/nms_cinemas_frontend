@@ -1,0 +1,35 @@
+<div class="container-fluid">
+    <app-admin-header></app-admin-header>
+</div>
+
+<h1> Admin Movie Delete</h1>
+
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Title</th>
+            <th>Ticket Price</th>
+            <th>Language</th>
+            <th>Description</th>
+            <th>Showtime</th>
+            <th>Auditorium</th>
+            <th>Image</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let movie of movies">
+            <td>{{movie.id}}</td>
+            <td>{{movie.title}}</td>
+            <td>{{movie.ticket_price}}</td>
+            <td>{{movie.language}}</td>
+            <td>{{movie.description}}</td>
+            <td>{{movie.showtime}}</td>
+            <td>{{movie.auditorium}}</td>
+            <td>{{movie.image}}</td>
+
+            <td><button type="button" (click)='onSubmit(movie.id)' class="btn btn-primary">Delete</button></td>
+        </tr>
+    </tbody>
+
+</table>
