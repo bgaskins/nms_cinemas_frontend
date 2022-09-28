@@ -1,6 +1,6 @@
 <header>
     <div class="img-container">
-        <img src="/assets/images/NMSCinemasLogo.png" alt="NMS CinemasLogo" id="brand-logo">
+        <img src="assets/images/NMSCinemasLogo.png" alt="NMS CinemasLogo" id="brand-logo">
     </div>
     <nav class="navbar navbar-expand-md">
         <ul class="navbar-nav navbar-collapse">
@@ -8,6 +8,8 @@
                     class="nav-link">Home</a></li>
         </ul>
         <ul class="navbar-nav navbar-collapse justify-content-end">
+            <li><a *ngIf="!hardcodedAuthenticationService.IsUserLoggedIn()" routerLink="/user-registration"
+                    class="nav-link">Register</a></li>
             <li><a *ngIf="!hardcodedAuthenticationService.IsUserLoggedIn()" routerLink="/user-login"
                     class="nav-link">Login</a></li>
             <li><a *ngIf="hardcodedAuthenticationService.IsUserLoggedIn()" routerLink="/movie-details"

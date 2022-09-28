@@ -1,7 +1,7 @@
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { catchError, Observable, throwError } from 'rxjs';
-import { Cart } from '../classes/cart';
+import { Observable, throwError } from 'rxjs';
+import { Movies } from '../classes/movies';
 
 @Injectable({
   providedIn: 'root'
@@ -18,24 +18,28 @@ export class CartServiceService {
 
 
   //get all users
-  getTickets(): Observable<Cart[]> {
-    return this.http.get<Cart[]>(this.url);
+  getTicket(): Observable<Movies[]> {
+    console.log('getTicket' + this.url + 'movies')
+    return this.http.get<Movies[]>(this.url + 'movies/find/{id}')
   }
 
   //delete user by id 
-  deleteTicket(id: number) {
-    let endPoints = id;
-    this.http.delete(this.url + endPoints).subscribe(any => {
-      return this.getTickets();
+  deleteTicket() {
+    let endPoints = "id"
+    this.http.delete(this.url + endPoints).subscribe(data => {
+      console.log(data);
     });
   }
 
   //post
-  createBooking(data: any): Observable<any> {
-    return this.http.post(this.url, data).pipe(
-      catchError(this.handleCartError)
-    );
+  createBooking(movie: Movies): Observable<any> {
+    const headers = { 'content-type': 'application/json' }
+    const body = JSON.stringify(movie);
+    console.log(body)
+    return this.http.post(this.url + 'create', body, { 'headers': headers })
   }
+
+
   // Handle API errors
   handleCartError(error: HttpErrorResponse) {
     if (error.error instanceof ErrorEvent) {
@@ -45,10 +49,5 @@ export class CartServiceService {
         `Backend returned code ${error.status}, ` +
         `body was: ${error.error}`);
     }
-    return throwError(
-      'Something bad happened; please try again later.');
-  };
-
-
-  //load image
+  }
 }

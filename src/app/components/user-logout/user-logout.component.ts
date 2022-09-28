@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { HardcodedAuthenticationService } from 'src/app/services/hardcoded-authentication.service';
 
 @Component({
@@ -8,10 +9,14 @@ import { HardcodedAuthenticationService } from 'src/app/services/hardcoded-authe
 })
 export class UserLogoutComponent implements OnInit {
 
-  constructor(private hardcodedAuthenticationService: HardcodedAuthenticationService) { }
+  constructor(private router: Router, private hardcodedAuthenticationService: HardcodedAuthenticationService) { }
 
   ngOnInit() {
     this.hardcodedAuthenticationService.logout();
+
+    setTimeout(() => {
+      this.router.navigate(['home']);
+    }, 2000);
   }
 
 }

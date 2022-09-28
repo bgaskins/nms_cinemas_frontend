@@ -25,7 +25,7 @@ export class AdminDeleteMovieComponent implements OnInit {
   }
 
   onSubmit(id: number) {
-    this.cartService.deleteTicket(id);
+    this.cartService.deleteTicket();
     console.log("Movie deleted");
     this.onReload();
   };

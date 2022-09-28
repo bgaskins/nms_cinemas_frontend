@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { HardcodedAuthenticationService } from 'src/app/services/hardcoded-authentication.service';
 
@@ -15,7 +14,7 @@ export class UserLoginComponent implements OnInit {
   errorMessage = 'Invalid Credentials';
   invalidLogin = false;
 
-  constructor(private formBuilder: FormBuilder, private router: Router,
+  constructor(private router: Router,
     private hardcodedAuthenticationService: HardcodedAuthenticationService) {
 
   }
@@ -26,7 +25,7 @@ export class UserLoginComponent implements OnInit {
   handleLogin() {
     if (this.hardcodedAuthenticationService.authenticate(this.username, this.password)) {
       //redirect to the welcome page
-      this.router.navigate(['home']);
+      this.router.navigate(['/home']);
       this.invalidLogin = false;
     } else {
       this.invalidLogin = true;

@@ -14,10 +14,10 @@ export class UserDashboardComponent implements OnInit {
   constructor(private dataService: DataServiceService, private router: Router) { }
 
   ngOnInit(): void {
-    this.getAllUser();
+    this.getAllUsers();
   }
-  getAllUser() {
-    this.dataService.getAllUser().subscribe(any => {
+  getAllUsers() {
+    this.dataService.getAllUsers().subscribe(any => {
       this.userDetails = any;
     });
   }

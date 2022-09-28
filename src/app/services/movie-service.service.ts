@@ -16,7 +16,7 @@ export class MovieServiceService {
   //inject the DI
   constructor(private http: HttpClient) { }
 
-  //get all users
+  //get all movies
   getMovies(): Observable<Movies[]> {
     return this.http.get<Movies[]>(this.url);
   }

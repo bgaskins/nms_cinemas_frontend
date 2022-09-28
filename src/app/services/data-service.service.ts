@@ -10,11 +10,8 @@ import { catchError } from 'rxjs/operators';
 })
 export class DataServiceService {
 
-
   url: string = "http://localhost:8080/api/user/";
-
   headers = new HttpHeaders().set('Content-Type', 'application/json');
-
 
 
   //inject the DI
@@ -22,24 +19,32 @@ export class DataServiceService {
 
 
   //get all users
-  getAllUser(): Observable<User[]> {
-    return this.http.get<User[]>(this.url);
+  getAllUsers(): Observable<User[]> {
+    console.log('getAllUsers ' + this.url + 'all')
+    return this.http.get<User[]>(this.url + 'all')
+  }
+
+  //post
+  createUser(user: User): Observable<any> {
+    const headers = { 'content-type': 'application/json' }
+    const body = JSON.stringify(user);
+    console.log(body)
+    return this.http.post(this.url + 'newUser', body, { 'headers': headers })
+  }
+
+  //update user
+  updateUser(data: any): Observable<any> {
+    return this.http.put(this.url, data).pipe(
+      catchError(this.handleError)
+    );
   }
 
   //delete user by id
   deleteUser(id: number) {
     let endPoints = id;
     this.http.delete(this.url + endPoints).subscribe(any => {
-      return this.getAllUser();
+      return this.getAllUsers();
     });
-  }
-
-
-  //post
-  createUser(data: any): Observable<any> {
-    return this.http.post(this.url, data).pipe(
-      catchError(this.handleError)
-    );
   }
 
   // Handle API errors

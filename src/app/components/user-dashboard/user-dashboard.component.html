@@ -13,16 +13,14 @@
                 <th>User Id</th>
                 <th>First Name</th>
                 <th>Last Name</th>
-                <th>Username</th>
                 <th>Email</th>
             </tr>
         </thead>
         <tbody>
             <tr *ngFor="let userInfo of userDetails">
                 <td>{{ userInfo.id }}</td>
-                <td>{{ userInfo.firstName }}</td>
-                <td>{{ userInfo.lastName }}</td>
-                <td>{{ userInfo.username }}</td>
+                <td>{{ userInfo.fname }}</td>
+                <td>{{ userInfo.lname }}</td>
                 <td>{{ userInfo.email }}</td>
             </tr>
         </tbody>

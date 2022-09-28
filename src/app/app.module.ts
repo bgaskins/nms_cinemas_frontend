@@ -12,8 +12,6 @@ import { HomeComponent } from './components/home/home.component';
 import { UserDashboardComponent } from './components/user-dashboard/user-dashboard.component';
 import { UserLoginComponent } from './components/user-login/user-login.component';
 import { UserRegistrationComponent } from './components/user-registration/user-registration.component';
-import { AddToCartComponent } from './components/add-to-cart/add-to-cart.component';
-import { OrderSummaryComponent } from './components/order-summary/order-summary.component';
 import { UserHeaderComponent } from './components/user-header/user-header.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PaymentComponent } from './components/payment/payment.component';
@@ -25,6 +23,8 @@ import { SearchMoviePipe } from './pipes/search-movie.pipe';
 import { ErrorComponent } from './components/error/error.component';
 import { ContactUsComponent } from './components/contact-us/contact-us.component';
 import { NowPlayingComponent } from './components/now-playing/now-playing.component';
+import { CartComponent } from './components/cart/cart.component';
+import { ConfirmationComponent } from './components/confirmation/confirmation.component';
 
 @NgModule({
   declarations: [
@@ -39,8 +39,6 @@ import { NowPlayingComponent } from './components/now-playing/now-playing.compon
     UserDashboardComponent,
     UserLoginComponent,
     UserRegistrationComponent,
-    AddToCartComponent,
-    OrderSummaryComponent,
     UserHeaderComponent,
     PaymentComponent,
     FooterComponent,
@@ -50,6 +48,8 @@ import { NowPlayingComponent } from './components/now-playing/now-playing.compon
     ErrorComponent,
     ContactUsComponent,
     NowPlayingComponent,
+    CartComponent,
+    ConfirmationComponent,
 
   ],
 

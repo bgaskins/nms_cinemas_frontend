@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
-import { Router } from '@angular/router';
+import { User } from 'src/app/classes/user';
 import { DataServiceService } from 'src/app/services/data-service.service';
 
 @Component({
@@ -8,28 +7,28 @@ import { DataServiceService } from 'src/app/services/data-service.service';
   templateUrl: './user-registration.component.html',
   styleUrls: ['./user-registration.component.css']
 })
+
+
 export class UserRegistrationComponent implements OnInit {
 
-  public userAccountRegistration: FormGroup;
+  constructor(private dataService: DataServiceService) { }
 
-  constructor(private formBuilder: FormBuilder,
-    private dataService: DataServiceService,
-    private router: Router) {
-    this.userAccountRegistration = this.formBuilder.group({
-      fname: [''],
-      lname: [''],
-      email: [''],
-      password: ['']
-    });
+
+  user = new User();
+  isUserAdded = false;
+
+  ngOnInit() {
   }
 
-  ngOnInit(): void {
-  }
+  createUser() {
+    this.dataService.createUser(this.user)
+      .subscribe(data => {
+        console.log(data)
+        this.isUserAdded = true;
 
-  onSubmit(userAccountRegistrationDetails: FormGroup) {
-    this.dataService.createUser(this.userAccountRegistration.value).subscribe(any => {
-      console.log(any);
-    });
-    this.router.navigate(['/user-login']);
+      })
   }
 }
+
+
+

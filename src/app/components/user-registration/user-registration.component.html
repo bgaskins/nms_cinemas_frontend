@@ -2,43 +2,35 @@
     <app-user-header></app-user-header>
 </div>
 
-<div class="container-fluid col-md-6 offset-md-3">
-    <h3>New Account Registration</h3>
-    <form class="user-account-registration" [formGroup]="userAccountRegistration"
-        (ngSubmit)="onSubmit(userAccountRegistration)">
-
-        <div class="form-row">
+<div style="width: 500px; margin: auto;">
+    <div class="submit-form">
+        <div *ngIf="!isUserAdded">
             <div class="form-group">
-                <label for="firstName">First Name</label>
-                <input type="text" class="form-control" name="firstName" id="firstName" formControlName="firstName">
+                <label for="fname">First Name</label>
+                <input type="text" class="form-control" id="fname" required [(ngModel)]="user.fname" name="fname" />
             </div>
-        </div>
-        <p></p>
 
-        <div class="form-row">
             <div class="form-group">
-                <label for="lastName">Last Name</label>
-                <input type="text" class="form-control" name="lastName" id="lastName" formControlName="lastName">
+                <label for="lname">Last Name</label>
+                <input type="text" class="form-control" id="lname" required [(ngModel)]="user.lname" name="lname" />
             </div>
-        </div>
-        <p></p>
 
-        <div class="form-row">
             <div class="form-group">
                 <label for="email">Email</label>
-                <input type="text" class="form-control" name="email" id="email" formControlName="email">
+                <input type="text" class="form-control" id="email" required [(ngModel)]="user.email" name="email" />
             </div>
-        </div>
-        <p></p>
 
-        <div class="form-row">
             <div class="form-group">
                 <label for="password">Password</label>
-                <input type="password" class="form-control" name="password" id="password" formControlName="password">
+                <input type="password" class="form-control" id="password" required [(ngModel)]="user.password"
+                    name="password" />
             </div>
+            <button type="button" class="btn btn-danger" (click)="createUser()">Submit</button>
         </div>
-        <p></p>
 
-        <button type="submit" class="btn btn-success btn-block">Register Account</button>
-    </form>
+        <div *ngIf="isUserAdded">
+            <h3>Registration Successful</h3>
+
+        </div>
+    </div>
 </div>
