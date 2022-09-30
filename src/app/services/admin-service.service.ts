@@ -10,7 +10,6 @@ export class AdminServiceService {
 
 
   url: string = "http://localhost:8080/api/admin/";
-
   headers = new HttpHeaders().set('Content-Type', 'application/json');
 
 
@@ -19,24 +18,25 @@ export class AdminServiceService {
 
 
 
-  getAdmin(): Observable<Admin[]> {
-    return this.http.get<Admin[]>(this.url);
+  getAdmin(id: number): Observable<Admin[]> {
+    return this.http.get<Admin[]>(this.url + `/find/${id}`);
   }
 
   //delete user by id
   deleteAdmin(id: number) {
     let endPoints = id;
     this.http.delete(this.url + endPoints).subscribe(any => {
-      return this.getAdmin();
+      return this.getAdmin(id);
     });
   }
 
 
   //post
-  createAdmin(data: any): Observable<any> {
-    return this.http.post(this.url, data).pipe(
-      catchError(this.handleAdminError)
-    );
+  createAdmin(admin: Admin): Observable<any> {
+    const headers = { 'content-type': 'application/json' }
+    const body = JSON.stringify(admin);
+    console.log(body)
+    return this.http.post(this.url + 'create', body, { 'headers': headers })
   }
 
   // Handle API errors

@@ -12,6 +12,7 @@ export class DataServiceService {
 
   url: string = "http://localhost:8080/api/user/";
   headers = new HttpHeaders().set('Content-Type', 'application/json');
+  movies: [];
 
 
   //inject the DI
@@ -20,8 +21,7 @@ export class DataServiceService {
 
   //get all users
   getAllUsers(): Observable<User[]> {
-    console.log('getAllUsers ' + this.url + 'all')
-    return this.http.get<User[]>(this.url + 'all')
+    return this.http.get<User[]>(this.url +'all')
   }
 
   //post

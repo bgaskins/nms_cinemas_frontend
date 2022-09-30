@@ -1,18 +1,17 @@
 <header>
     <div class="img-container">
-        <img src="assets/images/NMSCinemasLogo.png" alt="NMS CinemasLogo" id="brand-logo">
+        <img src="assets/images/nms-cinemas-logo.png" alt="NMS Cinemas Logo" id="brand-logo" width="250" height="225">
     </div>
     <nav class="navbar navbar-expand-md">
         <ul class="navbar-nav navbar-collapse">
-            <li><a id="home-btn" *ngIf="hardcodedAuthenticationService.IsUserLoggedIn()" routerLink="/home"
-                    class="nav-link">Home</a></li>
+            <li><a id="home-btn" routerLink="/home" class="nav-link">Home</a></li>
         </ul>
         <ul class="navbar-nav navbar-collapse justify-content-end">
             <li><a *ngIf="!hardcodedAuthenticationService.IsUserLoggedIn()" routerLink="/user-registration"
                     class="nav-link">Register</a></li>
             <li><a *ngIf="!hardcodedAuthenticationService.IsUserLoggedIn()" routerLink="/user-login"
                     class="nav-link">Login</a></li>
-            <li><a *ngIf="hardcodedAuthenticationService.IsUserLoggedIn()" routerLink="/movie-details"
+            <li><a *ngIf="hardcodedAuthenticationService.IsUserLoggedIn()" routerLink="/now-playing"
                     class="nav-link">Now Playing</a></li>
             <li><a *ngIf="hardcodedAuthenticationService.IsUserLoggedIn()" routerLink="/cart" class="nav-link">Cart</a>
             </li>

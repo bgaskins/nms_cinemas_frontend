@@ -8,12 +8,12 @@ import { HardcodedAuthenticationService } from 'src/app/services/hardcoded-authe
 })
 export class AdminHeaderComponent implements OnInit {
 
-  isUserLoggedIn: boolean = false;
+  isAdminLoggedIn: boolean = false;
 
   constructor(public hardcodedAuthenticationService: HardcodedAuthenticationService) { }
 
   ngOnInit() {
-    this.isUserLoggedIn = this.hardcodedAuthenticationService.IsUserLoggedIn();
+    this.isAdminLoggedIn = this.hardcodedAuthenticationService.IsAdminLoggedIn();
   }
 
 }

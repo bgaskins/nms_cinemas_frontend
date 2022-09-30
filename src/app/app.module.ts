@@ -5,9 +5,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AdminLoginComponent } from './components/admin-login/admin-login.component';
 import { AdminHeaderComponent } from './components/admin-header/admin-header.component';
-import { AdminAddMovieComponent } from './components/admin-add-movie/admin-add-movie.component';
-import { AdminUpdateMovieComponent } from './components/admin-update-movie/admin-update-movie.component';
-import { AdminDeleteMovieComponent } from './components/admin-delete-movie/admin-delete-movie.component';
 import { HomeComponent } from './components/home/home.component';
 import { UserDashboardComponent } from './components/user-dashboard/user-dashboard.component';
 import { UserLoginComponent } from './components/user-login/user-login.component';
@@ -25,6 +22,10 @@ import { ContactUsComponent } from './components/contact-us/contact-us.component
 import { NowPlayingComponent } from './components/now-playing/now-playing.component';
 import { CartComponent } from './components/cart/cart.component';
 import { ConfirmationComponent } from './components/confirmation/confirmation.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { AdminUpdateMovieComponent } from './components/admin-update-movie/admin-update-movie.component';
+import { AdminCreateMovieComponent } from './components/admin-create-movie/admin-create-movie.component';
+
 
 @NgModule({
   declarations: [
@@ -32,9 +33,6 @@ import { ConfirmationComponent } from './components/confirmation/confirmation.co
     AdminLoginComponent,
     AdminDashboardComponent,
     AdminHeaderComponent,
-    AdminAddMovieComponent,
-    AdminUpdateMovieComponent,
-    AdminDeleteMovieComponent,
     HomeComponent,
     UserDashboardComponent,
     UserLoginComponent,
@@ -50,6 +48,8 @@ import { ConfirmationComponent } from './components/confirmation/confirmation.co
     NowPlayingComponent,
     CartComponent,
     ConfirmationComponent,
+    AdminUpdateMovieComponent,
+    AdminCreateMovieComponent,
 
   ],
 
@@ -59,6 +59,7 @@ import { ConfirmationComponent } from './components/confirmation/confirmation.co
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
+    FontAwesomeModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

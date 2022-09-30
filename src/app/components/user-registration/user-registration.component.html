@@ -1,36 +1,43 @@
-<div class="container-fluid">
+<div class="container-header">
     <app-user-header></app-user-header>
 </div>
 
-<div style="width: 500px; margin: auto;">
-    <div class="submit-form">
+
+<h1>Register New Account</h1>
+
+<div class="container">
+    <form>
         <div *ngIf="!isUserAdded">
-            <div class="form-group">
-                <label for="fname">First Name</label>
-                <input type="text" class="form-control" id="fname" required [(ngModel)]="user.fname" name="fname" />
+            <div class="form-outline mb-2 w-25 mx-auto">
+                <input type="text" class="form-control" name="fname" [(ngModel)]="user.fname">
+                <label class="form-label">First Names</label>
             </div>
 
-            <div class="form-group">
-                <label for="lname">Last Name</label>
-                <input type="text" class="form-control" id="lname" required [(ngModel)]="user.lname" name="lname" />
+            <div class="form-outline mb-2 w-25 mx-auto">
+                <input type="text" class="form-control" name="lname" [(ngModel)]="user.lname">
+                <label class="form-label">Last Name</label>
             </div>
 
-            <div class="form-group">
-                <label for="email">Email</label>
-                <input type="text" class="form-control" id="email" required [(ngModel)]="user.email" name="email" />
+            <div class="form-outline mb-2 w-25 mx-auto">
+                <input type="text" class="form-control" name="email" [(ngModel)]="user.email">
+                <label class="form-label">Email Address</label>
             </div>
 
-            <div class="form-group">
-                <label for="password">Password</label>
-                <input type="password" class="form-control" id="password" required [(ngModel)]="user.password"
-                    name="password" />
+            <div class="form-outline mb-2 w-25 mx-auto">
+                <input type="text" class="form-control" name="password" [(ngModel)]="user.password">
+                <label class="form-label">Password</label>
             </div>
-            <button type="button" class="btn btn-danger" (click)="createUser()">Submit</button>
+
         </div>
+        <button type="button" class="btn align-center" (click)="createUser()">Submit</button>
 
         <div *ngIf="isUserAdded">
             <h3>Registration Successful</h3>
 
         </div>
-    </div>
+    </form>
+</div>
+
+<div class="container-footer">
+    <app-footer></app-footer>
 </div>

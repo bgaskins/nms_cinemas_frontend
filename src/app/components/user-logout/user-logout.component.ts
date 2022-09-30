@@ -13,10 +13,7 @@ export class UserLogoutComponent implements OnInit {
 
   ngOnInit() {
     this.hardcodedAuthenticationService.logout();
-
-    setTimeout(() => {
-      this.router.navigate(['home']);
-    }, 2000);
+    this.router.navigate(['/home']);
   }
 
 }

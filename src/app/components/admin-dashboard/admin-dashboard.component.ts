@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Movies } from 'src/app/classes/movies';
 import { MovieServiceService } from 'src/app/services/movie-service.service';
 
 @Component({
@@ -7,32 +7,25 @@ import { MovieServiceService } from 'src/app/services/movie-service.service';
   templateUrl: './admin-dashboard.component.html',
   styleUrls: ['./admin-dashboard.component.css']
 })
-export class AdminDashboardComponent implements OnInit {
+export class AdminDashboardComponent implements OnInit{
 
-  public movieTickets: any;
 
-  constructor(private movieService: MovieServiceService, private router: Router) { }
+  movies: Movies[] = [];
+
+  constructor(private movieService: MovieServiceService) { }
 
   ngOnInit(): void {
-    this.getMovies();
-  }
+    this.movieService.getAllMovies().subscribe((data: Movies[])=>{
+      this.movies = data;
+      console.log(this.movies);
+    })  
+  } 
 
-  private getMovies() {
-    this.movieService.getMovies().subscribe(any => {
-      this.movieTickets = any;
-    });
-  }
+    deleteMovie(id:number){
+      this.movieService.deleteAMovie(id).subscribe(_res => {
+           this.movies = this.movies.filter(item => item.id !== id);
+           console.log('Movie deleted successfully!');
+      })
+    }
 
-  updateMovie() {
-    this.router.navigate(['/admin-update-movie']);
-  }
-
-  deleteMovie() {
-    this.router.navigate(['/admin-delete-movie']);
-  }
-
-  createMovie() {
-    this.router.navigate(['/admin-add-movie']);
-  }
-
-}
+    }

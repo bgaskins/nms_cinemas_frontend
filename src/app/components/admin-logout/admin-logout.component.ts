@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HardcodedAuthenticationService } from 'src/app/services/hardcoded-authentication.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-admin-logout',
@@ -8,10 +9,12 @@ import { HardcodedAuthenticationService } from 'src/app/services/hardcoded-authe
 })
 export class AdminLogoutComponent implements OnInit {
 
-  constructor(private hardcodedAuthenticationService: HardcodedAuthenticationService) { }
+  constructor(private hardcodedAuthenticationService: HardcodedAuthenticationService, private router: Router) { }
 
   ngOnInit() {
     this.hardcodedAuthenticationService.logout();
+    this.router.navigate(['/home']);
+
   }
 
 

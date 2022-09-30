@@ -8,6 +8,7 @@ import { Movies } from '../classes/movies';
 })
 export class CartServiceService {
 
+  
 
   url: string = "http://localhost:8080/api/cart/";
 
@@ -18,9 +19,9 @@ export class CartServiceService {
 
 
   //get all users
-  getTicket(): Observable<Movies[]> {
+  getTicket(id: number): Observable<Movies[]> {
     console.log('getTicket' + this.url + 'movies')
-    return this.http.get<Movies[]>(this.url + 'movies/find/{id}')
+    return this.http.get<Movies[]>(this.url + `movies/find/${id}`)
   }
 
   //delete user by id 

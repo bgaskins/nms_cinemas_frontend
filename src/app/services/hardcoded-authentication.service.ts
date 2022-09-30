@@ -25,4 +25,23 @@ export class HardcodedAuthenticationService {
   logout() {
     sessionStorage.removeItem('authenticateUser');
   }
+
+
+  authenticateAdmin(adminUsername: any, adminPassword: any) {
+    console.log('before' + this.IsAdminLoggedIn())
+    if (adminUsername === 'admin' && adminPassword === 'admin123') {
+      sessionStorage.setItem('authenticateAdmin', adminUsername);
+      console.log('after', this.IsAdminLoggedIn());
+      return true;
+    }
+    return false;
+  }
+  IsAdminLoggedIn() {
+    let user = sessionStorage.getItem('authenticateAdmin');
+    return !(user === null);
+  }
+
+  logoutAdmin() {
+    sessionStorage.removeItem('authenticateAdmin');
+  }
 }

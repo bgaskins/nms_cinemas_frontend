@@ -1,0 +1,51 @@
+<div class="container-fluid">
+    <app-admin-header></app-admin-header>
+</div>
+
+<h3>Create A Movie</h3>
+<form>
+    <div *ngIf="!isMovieCreated">
+        <form [formGroup]="form" (ngSubmit)="submit()">
+        <div class="form-group mb-2 w-50 mx-auto">
+            <label for = "title">Movie Title</label>
+            <input formControlName="title" id="title"
+            type="text" class="form-control" name="title">
+        </div>
+
+        <div class="form-group mb-2 w-50 mx-auto">
+            <label for = "ticket_price">Ticket Price</label>
+            <input formControlName="ticket_price" id="title" type="text" class="form-control">
+        </div>
+
+        <div class="form-group mb-2 w-50 mx-auto">
+            <label for = "language">Language</label>
+            <input formControlName="language" id="language" type="text" class="form-control">
+        </div>
+
+        <div class="form-group mb-2 w-50 mx-auto">
+            <label for = "description">Description</label>
+            <input formControlName="description" id="description" type="text" class="form-control">
+        </div>
+
+        <div class="form-groupmb-2 w-50 mx-auto">
+            <label for = "showtime">Showtime</label>
+            <input formControlName="showtime" id="showtime" type="text" class="form-control">
+        </div>
+
+        <div class="form-group mb-2 w-50 mx-auto">
+            <label for = "auditorium">Auditorium</label>
+            <input formControlName="auditorium" id="auditorium" type="text" class="form-control">
+        </div>
+
+    <button type="submit" class="btn align-center">Update</button>
+
+    <div *ngIf="isMovieCreated">
+        <h3>Successfully created!</h3>>
+    </div>
+</form>
+</div>
+
+<!--Footer-->
+<div class="container-fluid">
+    <app-footer></app-footer>
+</div>

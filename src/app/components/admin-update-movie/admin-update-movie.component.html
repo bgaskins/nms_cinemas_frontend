@@ -2,77 +2,49 @@
     <app-admin-header></app-admin-header>
 </div>
 
-<div class="container-fluid col-md-6 offset-md-3">
-    <h3>Update Movie Ticket Details</h3>
-    <form class="update-movie-ticket-details" [formGroup]="updateMovieTicketDetails"
-        (ngSubmit)="onSubmit(updateMovieTicketDetails)">
-        <div class="form-row">
-            <div class="form-group">
-                <label for="movieTicketId">Movie Ticket Id</label>
-                <input type="number" class="form-control" name="movieTicketId" id="movieTicketId"
-                    formControlName="movieTicketId">
-            </div>
-        </div>
-        <p></p>
+<div class="container">
 
-        <div class="form-row">
-            <div class="form-group">
-                <label for="title">Name of the Movie</label>
-                <input type="text" class="form-control" name="title" id="title" formControlName="title">
-            </div>
-        </div>
-        <p></p>
+<h3>Update A Movie</h3>
+<a href="#" routerLink="/admin-dashboard" class="btn btn-primary">Back</a>
 
-        <div class="form-row">
-            <div class="form-group">
-                <label for="ticket_price">Ticket Price</label>
-                <input type="text" class="form-control" name="ticket_price" id="ticket_price"
-                    formControlName="ticket_price">
-            </div>
+<div>
+        <form [formGroup]="form" (ngSubmit)="submit()">
+        <div class="form-group mb-2 w-50 mx-auto">
+            <label for = "title">Movie Title</label>
+            <input formControlName="title" id="title"
+            type="text" class="form-control" name="title">
         </div>
-        <p></p>
 
-        <div class="form-row">
-            <div class="form-group">
-                <label for="language">Language</label>
-                <input type="text" class="form-control" name="language" id="language" formControlName="language">
-            </div>
+        <div class="form-group mb-2 w-50 mx-auto">
+            <label for = "ticket_price">Ticket Price</label>
+            <input formControlName="ticket_price" id="title" type="text" class="form-control">
         </div>
-        <p></p>
 
-        <div class="form-row">
-            <div class="form-group">
-                <label for="description">Description</label>
-                <input type="text" class="form-control" name="description" id="description"
-                    formControlName="description">
-            </div>
+        <div class="form-group mb-2 w-50 mx-auto">
+            <label for = "language">Language</label>
+            <input formControlName="language" id="language" type="text" class="form-control">
         </div>
-        <p></p>
 
-        <div class="form-row">
-            <div class="form-group">
-                <label for="showtime">Showtime</label>
-                <input type="number" class="form-control" name="showtime" id="showtime" formControlName="showtime">
-            </div>
+        <div class="form-group mb-2 w-50 mx-auto">
+            <label for = "description">Description</label>
+            <input formControlName="description" id="description" type="text" class="form-control">
         </div>
-        <p></p>
 
-        <div class="form-row">
-            <div class="form-group">
-                <label for="auditorium">Auditorium</label>
-                <input type="text" class="form-control" name="auditorium" id="price" formControlName="auditorium">
-            </div>
+        <div class="form-groupmb-2 w-50 mx-auto">
+            <label for = "showtime">Showtime</label>
+            <input formControlName="showtime" id="showtime" type="text" class="form-control">
         </div>
-        <p></p>
 
-        <div class="form-row">
-            <div class="form-group">
-                <label for="image">Image Upload</label>
-                <input type="image" class="form-control" name="image" id="image" formControlName="image">
-            </div>
+        <div class="form-group mb-2 w-50 mx-auto">
+            <label for = "auditorium">Auditorium</label>
+            <input formControlName="auditorium" id="auditorium" type="text" class="form-control">
         </div>
-        <p></p>
 
-        <button type="submit" class="btn btn-success btn-block">Update Movie Ticket Details</button>
-    </form>
+    <button type="submit" class="btn align-center">Update</button>
+</form>
+</div>
+</div>
+<!--Footer-->
+<div class="container-fluid">
+    <app-footer></app-footer>
 </div>

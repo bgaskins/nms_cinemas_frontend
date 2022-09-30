@@ -1,59 +1,73 @@
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { catchError, Observable, throwError } from 'rxjs';
+import { Observable, catchError, throwError } from 'rxjs';
 import { Movies } from '../classes/movies';
 
 @Injectable({
   providedIn: 'root'
 })
 export class MovieServiceService {
-
+  
   url: string = "http://localhost:8080/api/movies/";
-
-  headers = new HttpHeaders().set('Content-Type', 'application/json');
-
+  
+  httpOptions = { 
+    headers: new HttpHeaders({
+      'Content-Type': 'application/json'
+    })
+  }
 
   //inject the DI
   constructor(private http: HttpClient) { }
 
   //get all movies
-  getMovies(): Observable<Movies[]> {
-    return this.http.get<Movies[]>(this.url);
+  getAllMovies(): Observable<any> {
+    return this.http.get(this.url + 'all')
+    .pipe(
+      catchError(this.errorHandler)
+    )
   }
 
-  //delete user by id
-  deleteMovie(id: number) {
-    let endPoints = id;
-    this.http.delete(this.url + endPoints).subscribe(any => {
-      return this.getMovies();
-    });
+  //create movie
+  createMovie(movies: Movies): Observable<any> {
+  return this.http.post(this.url + 'create', JSON.stringify(movies), this.httpOptions)
+  .pipe(
+    catchError(this.errorHandler)
+  )
   }
 
-
-  //post
-  createMovie(data: any): Observable<any> {
-    return this.http.post(this.url, data).pipe(
-      catchError(this.handleMovieError)
-    );
+//get movie by ID
+  getMoviesById(id: number): Observable<any> {
+    return this.http.get(this.url + 'find' + id)
+    .pipe(
+      catchError(this.errorHandler)
+    )
   }
 
-  updateMovie(data: any): Observable<any> {
-    return this.http.post(this.url, data).pipe(
-      catchError(this.handleMovieError)
-    );
+  //update movie
+  updateMovie(id: number, movies: Movies): Observable<any> {
+    return this.http.put(this.url + 'update' + id, JSON.stringify(movies), this.httpOptions)
+    .pipe(
+      catchError(this.errorHandler)
+    )
   }
 
-  // Handle API errors
-  handleMovieError(error: HttpErrorResponse) {
-    if (error.error instanceof ErrorEvent) {
-      console.error('An error occurred:', error.error.message);
+  //delete movie by id
+  deleteAMovie(id: number){
+    return this.http.delete(this.url + 'delete' + id, this.httpOptions)
+    .pipe(
+      catchError(this.errorHandler)
+    )
+  }
+
+  errorHandler(error:any) {
+    let errorMessage = '';
+    if(error.error instanceof ErrorEvent) {
+      errorMessage = error.error.message;
     } else {
-      console.error(
-        `Backend returned code ${error.status}, ` +
-        `body was: ${error.error}`);
+      errorMessage = `Error Code: ${error.status}\nMessage: ${error.message}`;
     }
-    return throwError(
-      'Something bad happened; please try again later.');
-  };
+    return throwError(errorMessage);
+
+}
 
 }

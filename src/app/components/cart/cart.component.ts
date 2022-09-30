@@ -9,13 +9,11 @@ import { CartServiceService } from 'src/app/services/cart-service.service';
   templateUrl: './cart.component.html',
   styleUrls: ['./cart.component.css']
 })
-export class CartComponent implements OnInit {
+export class CartComponent {
 
   //inject the service
   constructor(private router: Router, private cartService: CartServiceService) { }
 
-  ngOnInit(): void {
-  }
   user: User[];
   movies: Movies[];
 
@@ -52,7 +50,6 @@ export class CartComponent implements OnInit {
 
   onReload() {
     this.router.navigate(['/users']);
-    this.ngOnInit();
   }
 
   goToPayment() {

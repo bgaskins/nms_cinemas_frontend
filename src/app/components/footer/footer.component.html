@@ -1,7 +1,7 @@
 <footer class="footer">
     <div class="footer-container">
         <div class="site-footer-logo">
-            <img src="assets/images/NMSCinemasLogo.png" alt="NMS Cinemas Logo">
+            <img src="assets/images/nms-cinemas-logo.png" alt="NMS Cinemas Logo" width="200" height="175">
         </div>
         <div class="footer-nav">
             <nav class="site-footer-nav">
@@ -9,13 +9,13 @@
                     <div class="col-sm-4 site-footer-nav-col-1" id="info-links">
                         <div class="site-footer-nav-col-2" id="login-shop">
                             <ul class="footer-nav-list">
-                                <li><a *ngIf="!hardcodedAuthenticationService.IsUserLoggedIn()"
-                                        routerLink="/admin-login" class="nav-link">Admin Login</a></li>
-                                <li> <a href="#" class="shop">Book Tickets</a></li>
+                                <li><a *ngIf="!hardcodedAuthenticationService.IsUserLoggedIn()" routerLink="/admin-login"
+                                        class="nav-link">Admin Login</a></li>
+                                <li> <a href="/now-playing" class="now-playing">Book Tickets</a></li>
+                                <li><a href="/contact-u/" class="contact us">Contact Us</a></li>
                             </ul>
                         </div>
                         <ul class="footer-nav-list">
-                            <li><a href="contact-us" class="contact us">Contact Us</a></li>
                             <p class="address">123 Main St.<br>Boston, Ma. 02108
                             <p>
                         </ul>

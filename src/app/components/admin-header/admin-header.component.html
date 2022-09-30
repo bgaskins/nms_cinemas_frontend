@@ -1,20 +1,15 @@
 <header>
     <div class="img-container">
-        <img src="./assets/images/NMSCinemasLogo.png" alt="NMS Cinemas Logo" id="brand-logo">
+        <img src="assets/images/nms-cinemas-logo.png" alt="NMS Cinemas Logo" id="brand-logo" width="250" height="225">
     </div>
     <nav class="navbar navbar-expand-md">
         <ul class="navbar-nav navbar-collapse">
-            <li><a id="home-btn" *ngIf="hardcodedAuthenticationService.IsUserLoggedIn()" routerLink="/home"
+            <li><a id="home-btn" *ngIf="hardcodedAuthenticationService.IsAdminLoggedIn()" routerLink="/home"
                     class="nav-link">Home</a></li>
         </ul>
         <ul class="navbar-nav navbar-collapse justify-content-end">
-            <li><a *ngIf="hardcodedAuthenticationService.IsUserLoggedIn()" routerLink="/admin-delete-movie"
-                    class="nav-link">Remove Movie</a></li>
-            <li><a *ngIf="hardcodedAuthenticationService.IsUserLoggedIn()" routerLink="/admin-update-movie"
-                    class="nav-link">Update Movie</a></li>
-            <li><a *ngIf="hardcodedAuthenticationService.IsUserLoggedIn()" routerLink="/admin-logout"
+            <li><a *ngIf="hardcodedAuthenticationService.IsAdminLoggedIn()" routerLink="/admin-logout"
                     class="nav-link">Logout</a></li>
-
         </ul>
     </nav>
 </header>

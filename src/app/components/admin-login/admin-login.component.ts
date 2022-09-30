@@ -10,7 +10,7 @@ import { HardcodedAuthenticationService } from 'src/app/services/hardcoded-authe
 })
 export class AdminLoginComponent implements OnInit {
 
-  username = "movies";
+  username = '';
   password = '';
   errorMessage = 'Invalid Credentials';
   invalidLogin = false;
@@ -24,9 +24,9 @@ export class AdminLoginComponent implements OnInit {
   }
 
   handleLogin() {
-    if (this.hardcodedAuthenticationService.authenticate(this.username, this.password)) {
+    if (this.hardcodedAuthenticationService.authenticateAdmin(this.username, this.password)) {
       //redirect to the welcome page
-      this.router.navigate(['home']);
+      this.router.navigate(['admin-dashboard']);
       this.invalidLogin = false;
     } else {
       this.invalidLogin = true;

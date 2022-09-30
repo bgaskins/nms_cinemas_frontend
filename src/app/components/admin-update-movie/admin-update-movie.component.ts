@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
-import { Router } from '@angular/router';
-import { MovieServiceService } from 'src/app/services/movie-service.service';
+import { MovieServiceService } from '../../services/movie-service.service';
+import { Router, ActivatedRoute } from '@angular/router';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { Movies } from '../../classes/movies';
 
 @Component({
   selector: 'app-admin-update-movie',
@@ -10,26 +11,36 @@ import { MovieServiceService } from 'src/app/services/movie-service.service';
 })
 export class AdminUpdateMovieComponent implements OnInit {
 
-  public updateMovieTicketDetails: FormGroup;
+  id: number;
+  movie: Movies;
+  form: FormGroup;
 
-  constructor(private formBuilder: FormBuilder, private movieService: MovieServiceService, private router: Router) {
-    this.updateMovieTicketDetails = this.formBuilder.group({
-      movieTicketId: [],
-      movieName: [''],
-      showDate: [''],
-      showTime: [''],
-      showingLocation: [''],
-      price: []
-    });
-  }
+  constructor(public movieService: MovieServiceService, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
+    this.id = this.route.snapshot.params['movieId'];
+    this.movieService.getMoviesById(this.id).subscribe((data: Movies)=>{
+      this.movie = data;
+    });
+
+    this.form = new FormGroup({
+      title: new FormControl('', [Validators.required]),
+      ticket_price: new FormControl('', Validators.required),
+      language: new FormControl('', [Validators.required]),
+      description: new FormControl('', Validators.required),
+      showtime: new FormControl('', [Validators.required]),
+      auditorium: new FormControl('', Validators.required)
+    });
   }
 
-  onSubmit(movieTicketDetails: FormGroup) {
-    this.movieService.updateMovie(this.updateMovieTicketDetails.value).subscribe(data => {
-      console.log(data);
-    });
-    this.router.navigate(['/admin-dashboard']);
+  submit(){
+    console.log(this.form.value);
+    this.movieService.createMovie(this.form.value).subscribe(res => {
+         console.log('Movie update successful!');
+         this.router.navigateByUrl('admin-dashboard');
+    })
   }
 }
+
+
+
