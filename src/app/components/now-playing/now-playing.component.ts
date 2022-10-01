@@ -1,8 +1,7 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { ActivatedRoute } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
 import { MovieServiceService } from 'src/app/services/movie-service.service';
 import { Movies } from '../../classes/movies';
+import { Router } from '@angular/router';
 
 
 
@@ -13,7 +12,7 @@ import { Movies } from '../../classes/movies';
 })
 export class NowPlayingComponent implements OnInit {
 
-  constructor(private route: ActivatedRoute, private http: HttpClient, private movieService: MovieServiceService,
+  constructor(private router: Router, private movieService: MovieServiceService,
   ) { };
 
   movies: Movies[] = [];
@@ -28,5 +27,12 @@ export class NowPlayingComponent implements OnInit {
       this.movies = data;
       console.log(this.movies);
     })  
+  }
+  getMovieById(id: number){
+    this.router.navigate(['/find/', id]);
+  }
+ 
+  goToConfirmation(){
+    this.router.navigate(['/confirmation']);
   }
 }

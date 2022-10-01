@@ -5,7 +5,7 @@
 <div class="container">
 
 <h3>Update A Movie</h3>
-<a href="#" routerLink="/admin-dashboard" class="btn btn-primary">Back</a>
+<a href="#" routerLink="/admin-dashboard" class="btn btn-primary mt-2 mb-4">Back</a>
 
 <div>
         <form [formGroup]="form" (ngSubmit)="submit()">
@@ -40,7 +40,10 @@
             <input formControlName="auditorium" id="auditorium" type="text" class="form-control">
         </div>
 
+    
     <button type="submit" class="btn align-center">Update</button>
+        
+   
 </form>
 </div>
 </div>

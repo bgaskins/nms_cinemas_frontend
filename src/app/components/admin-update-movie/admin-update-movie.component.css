@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+
+h3 {
+    text-align: center;
+    margin-top: 2em;
+}
+
+.container {
+    margin-top: 3em;
+    margin-bottom: 5em;
+    text-align: center;
+    font-size: 16px;
+    font-family: 'Roboto Mono', Regular 400, monospace;
+}
+
+button {
+    background: #000000;
+    color: #FFFFFF;
+    margin-top: .5em;
+    margin-left: .5em;
+    text-align: center;
+    font-size: 16px;
+    font-family: 'Roboto Mono', Regular 400, monospace;
+}

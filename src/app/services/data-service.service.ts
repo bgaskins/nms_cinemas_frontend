@@ -14,16 +14,13 @@ export class DataServiceService {
   headers = new HttpHeaders().set('Content-Type', 'application/json');
   movies: [];
 
-
   //inject the DI
   constructor(private http: HttpClient) { }
-
 
   //get all users
   getAllUsers(): Observable<User[]> {
     return this.http.get<User[]>(this.url +'all')
   }
-
   //post
   createUser(user: User): Observable<any> {
     const headers = { 'content-type': 'application/json' }
@@ -31,14 +28,12 @@ export class DataServiceService {
     console.log(body)
     return this.http.post(this.url + 'newUser', body, { 'headers': headers })
   }
-
   //update user
   updateUser(data: any): Observable<any> {
     return this.http.put(this.url, data).pipe(
       catchError(this.handleError)
     );
   }
-
   //delete user by id
   deleteUser(id: number) {
     let endPoints = id;
@@ -46,7 +41,6 @@ export class DataServiceService {
       return this.getAllUsers();
     });
   }
-
   // Handle API errors
   handleError(error: HttpErrorResponse) {
     if (error.error instanceof ErrorEvent) {

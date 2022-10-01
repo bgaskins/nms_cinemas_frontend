@@ -20,7 +20,6 @@ import { SearchMoviePipe } from './pipes/search-movie.pipe';
 import { ErrorComponent } from './components/error/error.component';
 import { ContactUsComponent } from './components/contact-us/contact-us.component';
 import { NowPlayingComponent } from './components/now-playing/now-playing.component';
-import { CartComponent } from './components/cart/cart.component';
 import { ConfirmationComponent } from './components/confirmation/confirmation.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { AdminUpdateMovieComponent } from './components/admin-update-movie/admin-update-movie.component';
@@ -46,7 +45,6 @@ import { AdminCreateMovieComponent } from './components/admin-create-movie/admin
     ErrorComponent,
     ContactUsComponent,
     NowPlayingComponent,
-    CartComponent,
     ConfirmationComponent,
     AdminUpdateMovieComponent,
     AdminCreateMovieComponent,

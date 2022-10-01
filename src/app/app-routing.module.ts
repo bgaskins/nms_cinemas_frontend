@@ -13,16 +13,15 @@ import { NowPlayingComponent } from './components/now-playing/now-playing.compon
 import { ErrorComponent } from './components/error/error.component';
 import { UserLogoutComponent } from './components/user-logout/user-logout.component';
 import { AdminLogoutComponent } from './components/admin-logout/admin-logout.component';
-import { CartComponent } from './components/cart/cart.component';
 import { ConfirmationComponent } from './components/confirmation/confirmation.component';
 import { AdminUpdateMovieComponent } from './components/admin-update-movie/admin-update-movie.component';
 import { AdminCreateMovieComponent } from './components/admin-create-movie/admin-create-movie.component';
+import { ContactUsComponent } from './components/contact-us/contact-us.component';
 
 const routes: Routes = [
   { "path": '', component: HomeComponent },
   { "path": 'user-login', component: UserLoginComponent },
   { "path": "home", component: HomeComponent },
-  { "path": "cart", component: CartComponent },
   { "path": 'user-registration', component: UserRegistrationComponent },
   { "path": "user-header", component: UserHeaderComponent },
   { "path": "user-dashboard", component: UserDashboardComponent },
@@ -32,8 +31,9 @@ const routes: Routes = [
   { "path": "admin-header", component: AdminHeaderComponent },
   { "path": 'admin-login', component: AdminLoginComponent },
   { "path": 'now-playing', component: NowPlayingComponent },
+  { "path": "contact-us", component: ContactUsComponent },
   { "path": "payment", component: PaymentComponent },
-  { "path": "confirmation", component: ConfirmationComponent },
+  { "path": "confirmation/:movieId", component: ConfirmationComponent },
   { "path": 'user-logout', component: UserLogoutComponent },
   { "path": 'admin-logout', component: AdminLogoutComponent },
   { "path": '**', component: ErrorComponent },

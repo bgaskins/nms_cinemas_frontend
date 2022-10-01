@@ -3,6 +3,51 @@
 </div>
 
 
-<div class="container-fluid">
-    <button (click)="makePayment()" class="btn btn-info">Make Payment</button>
-</div>
+<h1>Payment</h1>
+
+<div class="container">
+    <form>
+            <div class="form-outline mb-2 w-25 mx-auto">
+                <input type="text" class="form-control" name="fname">
+                <label class="form-label">First Names</label>
+            </div>
+            <div class="form-outline mb-2 w-25 mx-auto">
+                <input type="text" class="form-control" name="lname">
+                <label class="form-label">Last Name</label>
+            </div>
+            <div class="form-outline mb-2 w-25 mx-auto">
+                <input type="text" class="form-control" name="card-number">
+                <label class="form-label">Card Number</label>
+            </div>
+            <div class="form-outline mb-2 w-25 mx-auto">
+                <input type="text" class="form-control" name="exp-date">
+                <label class="form-label">Card Expiration Date</label>
+            </div>
+            <div class="form-outline mb-2 w-25 mx-auto">
+                <input type="password" class="form-control" name="security">
+                <label class="form-label">3-Digit Security Code</label>
+            </div>
+
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    Confirm Payment
+  </button>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Payment Received</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          Enjoy the show!
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" (click)='returnHome()' class="btn btn-primary">Return Home</button>
+        </div>
+      </div>
+    </div>
+  </div>

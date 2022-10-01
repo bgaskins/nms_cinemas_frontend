@@ -17,4 +17,9 @@ export class PaymentComponent implements OnInit {
     this.router.navigate(['/confirmation']);
   }
 
+  returnHome(){
+    this.router.navigate(['/home']);
+
+  }
+
 }
