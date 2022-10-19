@@ -11,7 +11,6 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 export class AdminCreateMovieComponent implements OnInit {
 
   form: FormGroup;
-  isMovieCreated= false;
 
 
   constructor( public movieService: MovieServiceService, private router: Router) { }
@@ -30,7 +29,7 @@ export class AdminCreateMovieComponent implements OnInit {
   submit(){
     console.log(this.form.value);
     this.movieService.createMovie(this.form.value).subscribe(res => {
-         console.log('Movie update successful!');
+         console.log('Movie added successfully!');
          this.router.navigateByUrl('admin-dashboard');
     })
   }

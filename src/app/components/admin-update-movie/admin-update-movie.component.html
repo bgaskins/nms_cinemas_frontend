@@ -8,7 +8,7 @@
 <a href="#" routerLink="/admin-dashboard" class="btn btn-primary mt-2 mb-4">Back</a>
 
 <div>
-        <form [formGroup]="form" (ngSubmit)="submit()">
+        <form [formGroup]="form" (ngSubmit)="onSubmit()">
         <div class="form-group mb-2 w-50 mx-auto">
             <label for = "title">Movie Title</label>
             <input formControlName="title" id="title"
@@ -41,7 +41,7 @@
         </div>
 
     
-    <button type="submit" class="btn align-center">Update</button>
+    <button type="onSubmit" class="btn align-center">Update</button>
         
    
 </form>

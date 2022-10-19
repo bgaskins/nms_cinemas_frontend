@@ -8,6 +8,10 @@
                     class="nav-link">Home</a></li>
         </ul>
         <ul class="navbar-nav navbar-collapse justify-content-end">
+            <li><a *ngIf="hardcodedAuthenticationService.IsAdminLoggedIn()" routerLink="/admin-update-movie"
+                    class="nav-link">Update A Movie</a></li>
+        </ul>
+        <ul class="navbar-nav navbar-collapse justify-content-end">
             <li><a *ngIf="hardcodedAuthenticationService.IsAdminLoggedIn()" routerLink="/admin-logout"
                     class="nav-link">Logout</a></li>
         </ul>

@@ -6,5 +6,4 @@ export class Movies {
     description: string;
     showtime: string;
     auditorium: string;
-    image: Blob;
 }

@@ -5,7 +5,7 @@
 <div class="container-fluid">
     <h2>Admin Dashboard</h2>
 
-    <a href="#" [routerLink]="['/admin-create-movie/']" class="btn">Create New Movie</a>
+    <a href="#" [routerLink]="['/admin-create-movie/']" class="btn">Add New Movie</a>
 
     <table class="table table-striped table-hover">
         <thead>
@@ -27,7 +27,7 @@
                 <td>{{ movie.ticket_price }}</td>
                 <td>
                     <a href="#" [routerLink]="['/admin-update-movie/', movie.id]" class="btn btn-primary">Update</a>
-                    <button type="button" (click)="deleteMovie(movie.id)" class="btn">Delete</button>
+                    <button type="submit" (click)="deleteMovie(movie.id)" class="btn">Delete</button>
                 </td>
             </tr>
         </tbody>

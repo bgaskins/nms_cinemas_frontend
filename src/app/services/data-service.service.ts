@@ -29,15 +29,13 @@ export class DataServiceService {
     return this.http.post(this.url + 'newUser', body, { 'headers': headers })
   }
   //update user
-  updateUser(data: any): Observable<any> {
-    return this.http.put(this.url, data).pipe(
-      catchError(this.handleError)
+  updateUser(id: number): Observable<any> {
+    return this.http.put(this.url,id).pipe(
     );
   }
   //delete user by id
   deleteUser(id: number) {
-    let endPoints = id;
-    this.http.delete(this.url + endPoints).subscribe(any => {
+    this.http.delete(this.url + 'delete' + id).subscribe(any => {
       return this.getAllUsers();
     });
   }

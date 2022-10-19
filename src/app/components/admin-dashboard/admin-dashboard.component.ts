@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Movies } from 'src/app/classes/movies';
 import { MovieServiceService } from 'src/app/services/movie-service.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-admin-dashboard',
@@ -12,20 +13,21 @@ export class AdminDashboardComponent implements OnInit{
 
   movies: Movies[] = [];
 
-  constructor(private movieService: MovieServiceService) { }
+  constructor(private movieService: MovieServiceService, private router: Router) { }
 
   ngOnInit(): void {
     this.movieService.getAllMovies().subscribe((data: Movies[])=>{
-      this.movies = data;
       console.log(this.movies);
-    })  
+      this.movies = data;
+    });
+
   } 
 
-    deleteMovie(id:number){
-      this.movieService.deleteAMovie(id).subscribe(_res => {
-           this.movies = this.movies.filter(item => item.id !== id);
-           console.log('Movie deleted successfully!');
-      })
-    }
+  deleteMovie(id:number) {
+    this.movieService.deleteMovieById(id).subscribe(() => this.ngOnInit());
+      console.log('Movie deleted', id);
 
     }
+  }
+
+

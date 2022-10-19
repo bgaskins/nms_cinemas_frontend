@@ -10,7 +10,7 @@
         <!-- Email input -->
         <div class="form-outline mb-2 w-25 mx-auto">
             <input type="text" class="form-control" name="username" [(ngModel)]="username">
-            <label class="form-label">Email Address</label>
+            <label class="form-label">User Name</label>
         </div>
 
         <!-- Password input -->
@@ -20,7 +20,7 @@
         </div>
 
         <!-- Submit button -->
-        <button type="button" (click)=handleLogin() class="btn align-center">Login</button>
+        <button type="button" (click)="handleLogin()" class="btn align-center">Login</button>
         <!-- Register buttons -->
         <div class="text-center mt-3">
             <p>Not a member? <a href="/user-registration">Register</a></p>

@@ -11,7 +11,6 @@ import { UserLoginComponent } from './components/user-login/user-login.component
 import { UserRegistrationComponent } from './components/user-registration/user-registration.component';
 import { UserHeaderComponent } from './components/user-header/user-header.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { PaymentComponent } from './components/payment/payment.component';
 import { AdminDashboardComponent } from './components/admin-dashboard/admin-dashboard.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { UserLogoutComponent } from './components/user-logout/user-logout.component';
@@ -37,7 +36,6 @@ import { AdminCreateMovieComponent } from './components/admin-create-movie/admin
     UserLoginComponent,
     UserRegistrationComponent,
     UserHeaderComponent,
-    PaymentComponent,
     FooterComponent,
     UserLogoutComponent,
     AdminLogoutComponent,

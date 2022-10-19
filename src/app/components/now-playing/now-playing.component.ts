@@ -28,6 +28,7 @@ export class NowPlayingComponent implements OnInit {
       console.log(this.movies);
     })  
   }
+
   getMovieById(id: number){
     this.router.navigate(['/find/', id]);
   }

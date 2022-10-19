@@ -26,14 +26,14 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let m of movies">
-                <td>{{ m.id }}</td>
-                <td>{{ m.title }}</td>
-                <td>{{ m.showtime }}</td>
-                <td>{{ m.auditorium }}</td>
-                <td>{{ m.ticket_price }}</td>
+            <tr *ngFor="let movie of movies">
+                <td>{{ movie.id }}</td>
+                <td>{{ movie.title }}</td>
+                <td>{{ movie.showtime }}</td>
+                <td>{{ movie.auditorium }}</td>
+                <td>{{ movie.ticket_price }}</td>
                 <td>
-                    <a href="#" [routerLink]="['/confirmation/', m.id]" class="btn btn-primary">Book Ticket</a>
+                    <a href="#" [routerLink]="['/order-summary/', movie.id]" class="btn btn-primary">Book Ticket</a>
                 </td>
             </tr>
         </tbody>
