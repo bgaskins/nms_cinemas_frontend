@@ -13,9 +13,11 @@ export class AdminDashboardComponent implements OnInit{
 
   movies: Movies[] = [];
 
+
   constructor(private movieService: MovieServiceService, private router: Router) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
+
     this.movieService.getAllMovies().subscribe((data: Movies[])=>{
       console.log(this.movies);
       this.movies = data;
@@ -23,11 +25,21 @@ export class AdminDashboardComponent implements OnInit{
 
   } 
 
-  deleteMovie(id:number) {
-    this.movieService.deleteMovieById(id).subscribe(() => this.ngOnInit());
-      console.log('Movie deleted', id);
+  refresh(): void {
+    window.location.reload();
+}
 
-    }
+  deleteMovie(id:number) {
+    this.movieService.deleteMovieById(id)
+    .subscribe(
+      data =>
+        console.log(data)
+    );
+    this.router.navigate(['admin-dashboard'])
+    .then(() => {
+      window.location.reload();
+    });
+      }
   }
 
 
