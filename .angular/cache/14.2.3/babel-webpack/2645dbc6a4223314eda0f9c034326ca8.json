@@ -1,0 +1,1 @@
+{"ast":null,"code":"export class Cart {\n  constructor(movie) {\n    this.id = movie.id;\n    this.title = movie.title;\n    this.imageUrl = movie.imageUrl;\n    this.showtime = movie.showtime;\n    this.auditorium = movie.auditorium;\n    this.ticket_price = movie.ticket_price;\n    this.quantity = 1;\n  }\n\n}","map":null,"metadata":{},"sourceType":"module"}
