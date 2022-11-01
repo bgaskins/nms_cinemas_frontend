@@ -2,95 +2,79 @@
     <app-user-header></app-user-header>
 </div>
 
-<div class="container-fluid align-center">
-<!--Carousel of New Releases-->
-    <div class="container-fluid mt-5" id="carousel">
-        <div class="container " id="carousel">
-            <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
-                <div class="carousel-indicators">
-                    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active"
-                        aria-current="true" aria-label="Slide 1"></button>
-                </div>
-                <div class="carousel-inner align-center">
-                    <div class="carousel-item active" data-bs-interval="10000">
-                        <img src="assets/images/ad-hero-carousel.png" class="d-block w-100" alt="Halloween">
-                        <div class="carousel-caption d-none d-md-block">
-                            <h5>Horror Nights</h5>
-                        </div>
-                    </div>
-                </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark"
-                    data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark"
-                    data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                </button>
-            </div>
+    <!--Carousel of Theatre Info-->
+    <div class="container-fluid" id="hero">
+        <div>
+            <img src="assets/images/cinema-hero.png" class="w-100" alt="Cinema">
         </div>
+
     </div>
-    <!--Featured New Releases-->
-    <div class="container p-5 align-center" id="featured-movies">
-        <div class="row">
-            <div class="col-sm-3 mb-4 mx-auto">
+
+    <!--Movie Features-->
+    <div class="container-fluid align-center">
+        <div class="row p-5">
+            <div class="now-playing">
+                <h1 style="color:#7000cb; margin-bottom: 1em"><strong>Now Playing</strong></h1>  
+            </div>
+            <div class="col-lg-4 mb-3 mx-auto">
                 <div class="card h-100" style="width: 16rem;">
-                    <img src="./assets/images/scream.png" class="card-img-top" alt="Scream">
+                    <img src="./assets/images/movies/scream.png" class="card-img-top" alt="Scream">
                     <div class="card-body h-50">
                         <h5 class="card-title text-center">Scream</h5>
-                        <p class="card-text mt-2">A year after the murder of her mother, a teenage girl is terrorized by
-                            a new killer, who targets the girl and her friends by using horror films for
-                            inspiration.
-                        </p>
                     </div>
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item text-center">Rated R | 91m</li>
                     </ul>
-                    <div class="card-body text-center">
-                        <a href="/now-playing" class="btn btn-primary">Book Tickets</a>
-                    </div>
                 </div>
             </div>
-            <div class="col-sm-3 mb-4 mt-6 mx-auto">
+            <div class="col-lg-4 mb-3 mt-6 mx-auto">
                 <div class="card h-100" style="width: 16rem;">
-                    <img src="./assets/images/halloween.png" class="card-img-top" alt="Halloween">
+                    <img src="./assets/images/movies/black-adam.png" class="card-img-top" alt="Black Adam">
                     <div class="card-body h-50">
-                        <h5 class="card-title text-center">Halloween</h5>
-                        <p class="card-tex mt-2">On a cold Halloween night in 1978, crazed Michael Myers returns to
-                            cause chaos in Haddonfield, Illinois.
-                        </p>
+                        <h5 class="card-title text-center">Black Adam</h5>
                     </div>
                     <ul class="list-group list-group-flush">
-                        <li class="list-group-item text-center">Rated R | 1h 25m</li>
+                        <li class="list-group-item text-center">Rated PG-13 | 2h 5m</li>
                     </ul>
-                    <div class="card-body text-center">
-                        <a href="/now-playing" class="btn btn-primary">Book Tickets</a>
-                    </div>
                 </div>
             </div>
-            <div class="col-sm-3 mb-4 mt-6 mx-auto align-items-stretch">
+            <div class="col-lg-4 mb-3 mt-6 mx-auto align-items-stretch">
                 <div class="card h-100" style="width: 16rem;">
-                    <img src="./assets/images/the-ruins.png" class="card-img-top" alt="The Ruins">
+                    <img src="./assets/images/movies/amsterdam.png" class="card-img-top" alt="Amsterdam">
                     <div class="card-body h-50">
-                        <h5 class="card-title text-center">The Grudge</h5>
-                        <p class="card-text mt-2"> A detective investigates a cursed house that has a connection to a
-                            shocking case from the past.
-                        </p>
+                        <h5 class="card-title text-center">Amsterdam</h5>
+
                     </div>
                     <ul class="list-group list-group-flush">
-                        <li class="list-group-item text-center">Rated PG-13 | 1h 31m</li>
+                        <li class="list-group-item text-center">Rated R | 2h 14m</li>
                     </ul>
-                    <div class="card-body text-center">
-                        <a href="/now-playing" class="btn btn-primary">Book Tickets</a>
+                </div>
+            </div>
+            <div class="get-ticket-button text-center">
+                <a href="/now-playing" class="btn">Get Tickets</a>
+            </div>
+        </div>
+    </div>
+    
+    <!--More Theatre Information (Reservations)-->
+    <div class="container-fluid p-5 align-center" id="lower-info">
+        <div class="row">
+            <div class="col-sm-4">
+                <img src="./assets/images/moviegoers.png" alt="Movie Goers" style="width:280px; height:280px">
+            </div>
+            <div class="col-sm-8">
+                <div class="reservation-content">
+                    <h1 style="color:#7000cb; margin-bottom: .25em"><strong> Reserve your private screening now! </strong></h1>  
+                    <h3 style="color:#0054d1; margin-bottom: .5em"> Current release titles available for private screenings <strong>starting at $200.</strong></h3>
+                    <h6 style="color:#000000"> Bring up to 20 guests. </h6>
+                    <div class="get-ticket-button text-left">
+                        <a href="/contact-us" class="btn">Reserve Now</a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-<!--Footer-->
 <div class="container-fluid">
     <app-footer></app-footer>
 </div>

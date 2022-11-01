@@ -1,0 +1,18 @@
+#empty {
+    margin-bottom: 22em;
+}
+#cart-details {
+    margin-top:6em;
+    font-family:Arial, Helvetica, sans-serif;
+    
+}
+
+.btn {
+    background-color:#000000;
+    color: #ffffff;
+}
+
+.btn:hover {
+    background-color:#0074c7;
+    color: #ffffff;
+}

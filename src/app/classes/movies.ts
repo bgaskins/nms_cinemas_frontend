@@ -1,9 +1,14 @@
 export class Movies {
-    id: number;
-    title: string;
-    ticket_price: string;
-    language: string;
-    description: string;
-    showtime: string;
-    auditorium: string;
+
+        constructor(
+                public id: number,
+                public title: string,
+                public imageUrl: string,
+                public ticket_price: number,
+                public language: string,
+                public description: string,
+                public showtime: string,
+                public auditorium: string,
+        ) { }
+
 }

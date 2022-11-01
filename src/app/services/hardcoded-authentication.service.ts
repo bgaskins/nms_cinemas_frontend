@@ -8,6 +8,7 @@ export class HardcodedAuthenticationService {
 
   constructor() { }
 
+  // Authenticate MAIN user login 
   authenticate(username: any, password: any) {
     console.log('before' + this.IsUserLoggedIn())
     if (username === 'movies' && password === 'movie123') {
@@ -26,7 +27,7 @@ export class HardcodedAuthenticationService {
     sessionStorage.removeItem('authenticateUser');
   }
 
-
+  //Authenticate MAIN admin login
   authenticateAdmin(adminUsername: any, adminPassword: any) {
     console.log('before' + this.IsAdminLoggedIn())
     if (adminUsername === 'admin' && adminPassword === 'admin123') {

@@ -2,40 +2,32 @@
     <app-user-header></app-user-header>
 </div>
 
+        <!--User login... Username: movies Password: movie123-->
 
 <h1>Login</h1>
 
 <div class="container">
     <form>
-        <!-- Email input -->
+        <!-- User username input -->
         <div class="form-outline mb-2 w-25 mx-auto">
             <input type="text" class="form-control" name="username" [(ngModel)]="username">
             <label class="form-label">User Name</label>
         </div>
 
-        <!-- Password input -->
+        <!-- User password input -->
         <div class="form-outline mb-2 w-25 mx-auto">
             <input type="password" class="form-control" name="password" [(ngModel)]="password">
             <label class="form-label">Password</label>
         </div>
 
-        <!-- Submit button -->
         <button type="button" (click)="handleLogin()" class="btn align-center">Login</button>
-        <!-- Register buttons -->
+        
+        <!-- Registration if user has no login-->
         <div class="text-center mt-3">
             <p>Not a member? <a href="/user-registration">Register</a></p>
         </div>
     </form>
 </div>
-
-<!--<div class="container">
-            <div class="alert alert-danger" *ngIf='invalidLogin'>{{errorMessage}}</div>
-            <div>
-                User Name: <input type="text" name="username" [(ngModel)]="username">
-                Password: <input type="text" name="password" [(ngModel)]="password">
-                <button (click)=handleLogin() class="btn">Login</button>
-            </div>
-        </div> -->
 
 
 <div class="container-fluid">

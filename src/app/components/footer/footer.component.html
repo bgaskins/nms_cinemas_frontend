@@ -1,4 +1,4 @@
-<footer class="footer">
+<footer>
     <div class="footer-container">
         <div class="site-footer-logo">
             <img src="assets/images/icon.png" alt="NMS Cinemas Logo" width="100" height="100">
@@ -9,6 +9,8 @@
                     <div class="col-sm-4 site-footer-nav-col-1" id="info-links">
                         <div class="site-footer-nav-col-2" id="login-shop">
                             <ul class="footer-nav-list">
+
+                                <!--Admin can access their dashboard from footer link-->
                                 <li><a *ngIf="!hardcodedAuthenticationService.IsUserLoggedIn()" routerLink="/admin-login"
                                         class="nav-link">Admin Login</a></li>
                                 <li> <a href="/now-playing" class="now-playing">Book Tickets</a></li>
@@ -22,7 +24,7 @@
                     </div>
                 </div>
                 <div class="site-footer-nav-col-3" id="copyright">
-                    <div class="copyright text-muted"> © 2022 NMS Cinemas | Built by Bryan Gaskins </div>
+                    <div class="copyright text-muted"> © 2022 NMS Cinemas | Developed by Bryan Gaskins </div>
                 </div>
             </nav>
         </div>

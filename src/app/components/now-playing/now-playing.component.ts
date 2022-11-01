@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { MovieServiceService } from 'src/app/services/movie-service.service';
 import { Movies } from '../../classes/movies';
 import { Router } from '@angular/router';
+import { CartServiceService } from '../../services/cart-service.service';
+import { Cart } from '../../classes/cart';
 
 
 
@@ -12,28 +14,27 @@ import { Router } from '@angular/router';
 })
 export class NowPlayingComponent implements OnInit {
 
-  constructor(private router: Router, private movieService: MovieServiceService,
-  ) { };
 
   movies: Movies[] = [];
 
-  public searchMovie: any = '';
-  public query: Movies[];
-
-
+  constructor(private movieService: MovieServiceService,
+    private cartService: CartServiceService,
+    private router: Router) { }
 
   ngOnInit() {
-    this.movieService.getAllMovies().subscribe((data: Movies[])=>{
-      this.movies = data;
+    this.movieService.getAllMovies().subscribe((data: Movies[]) => {
       console.log(this.movies);
-    })  
+      this.movies = data;
+    });
   }
 
-  getMovieById(id: number){
-    this.router.navigate(['/find/', id]);
-  }
- 
-  goToConfirmation(){
-    this.router.navigate(['/confirmation']);
+
+
+  addToCart(movies: Movies) {
+    console.log(`Adding to cart: ${movies.title}, ${movies.ticket_price}`);
+    const theCartItem = new Cart(movies);
+    this.cartService.addToCart(theCartItem);
+    this.router.navigate(['/cart-details']);
+
   }
 }

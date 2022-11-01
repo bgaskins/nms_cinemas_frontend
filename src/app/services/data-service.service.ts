@@ -14,45 +14,31 @@ export class DataServiceService {
   headers = new HttpHeaders().set('Content-Type', 'application/json');
   movies: [];
 
-  //inject the DI
+
   constructor(private http: HttpClient) { }
 
-  //get all users
+  //Get all of NMS Cinemas users
   getAllUsers(): Observable<User[]> {
-    return this.http.get<User[]>(this.url +'all')
+    return this.http.get<User[]>(this.url + 'all')
   }
-  //post
+  //Create a new user
   createUser(user: User): Observable<any> {
     const headers = { 'content-type': 'application/json' }
     const body = JSON.stringify(user);
     console.log(body)
     return this.http.post(this.url + 'newUser', body, { 'headers': headers })
   }
-  //update user
+  //Update an existing user
   updateUser(id: number): Observable<any> {
-    return this.http.put(this.url,id).pipe(
+    return this.http.put(this.url, id).pipe(
     );
   }
-  //delete user by id
+  //Delete a user by ID
   deleteUser(id: number) {
     this.http.delete(this.url + 'delete' + id).subscribe(any => {
       return this.getAllUsers();
     });
   }
-  // Handle API errors
-  handleError(error: HttpErrorResponse) {
-    if (error.error instanceof ErrorEvent) {
-      console.error('An error occurred:', error.error.message);
-    } else {
-      console.error(
-        `Backend returned code ${error.status}, ` +
-        `body was: ${error.error}`);
-    }
-    return throwError(
-      'Something bad happened; please try again later.');
-  };
 
-
-  //load image
 
 }

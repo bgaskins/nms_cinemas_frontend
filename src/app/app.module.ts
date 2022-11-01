@@ -6,7 +6,6 @@ import { AppComponent } from './app.component';
 import { AdminLoginComponent } from './components/admin-login/admin-login.component';
 import { AdminHeaderComponent } from './components/admin-header/admin-header.component';
 import { HomeComponent } from './components/home/home.component';
-import { UserDashboardComponent } from './components/user-dashboard/user-dashboard.component';
 import { UserLoginComponent } from './components/user-login/user-login.component';
 import { UserRegistrationComponent } from './components/user-registration/user-registration.component';
 import { UserHeaderComponent } from './components/user-header/user-header.component';
@@ -19,11 +18,13 @@ import { SearchMoviePipe } from './pipes/search-movie.pipe';
 import { ErrorComponent } from './components/error/error.component';
 import { ContactUsComponent } from './components/contact-us/contact-us.component';
 import { NowPlayingComponent } from './components/now-playing/now-playing.component';
-import { ConfirmationComponent } from './components/confirmation/confirmation.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { AdminUpdateMovieComponent } from './components/admin-update-movie/admin-update-movie.component';
 import { AdminCreateMovieComponent } from './components/admin-create-movie/admin-create-movie.component';
-
+import { CartDetailsComponent } from './components/cart-details/cart-details.component';
+import { CartStatusComponent } from './components/cart-status/cart-status.component';
+import { CheckoutComponent } from './components/checkout/checkout.component';
+import { MovieServiceService } from './services/movie-service.service';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,6 @@ import { AdminCreateMovieComponent } from './components/admin-create-movie/admin
     AdminDashboardComponent,
     AdminHeaderComponent,
     HomeComponent,
-    UserDashboardComponent,
     UserLoginComponent,
     UserRegistrationComponent,
     UserHeaderComponent,
@@ -43,9 +43,11 @@ import { AdminCreateMovieComponent } from './components/admin-create-movie/admin
     ErrorComponent,
     ContactUsComponent,
     NowPlayingComponent,
-    ConfirmationComponent,
     AdminUpdateMovieComponent,
     AdminCreateMovieComponent,
+    CartDetailsComponent,
+    CartStatusComponent,
+    CheckoutComponent,
 
   ],
 
@@ -57,7 +59,7 @@ import { AdminCreateMovieComponent } from './components/admin-create-movie/admin
     ReactiveFormsModule,
     FontAwesomeModule,
   ],
-  providers: [],
+  providers: [MovieServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

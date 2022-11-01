@@ -1,8 +1,8 @@
-<div class="container-header">
+<div class="container-fluid">
     <app-user-header></app-user-header>
 </div>
 
-
+<!--User registration form-->
 <h1>Register New Account</h1>
 
 <div class="container">
@@ -31,6 +31,7 @@
         </div>
         <button type="button" class="btn align-center" (click)="createUser()">Submit</button>
 
+        <!--If user is added-->
         <div *ngIf="isUserAdded">
             <h3>Registration Successful</h3>
 
@@ -38,6 +39,6 @@
     </form>
 </div>
 
-<div class="container-footer">
+<div class="container-fluid">
     <app-footer></app-footer>
 </div>

@@ -1,19 +1,10 @@
-<div class="container">
+<div class="container" id="header">
     <app-user-header></app-user-header>
 </div>
 
-<!--Search Movie Times-->
-<div class="container">
-    <div class="row">
-        <h3>Search Movie Times</h3>
-    </div>
-</div>
-<div class="container">
-    <div class="form-group">
-        <input type="text" class="form-control mb-4 mt-3" placeholder="Search" [(ngModel)]="query" />
-    </div>
-</div>
-<div class="container">
+<!--Movies now playing-->
+<div class="container" id="movie-dashboard">
+    <h3>Showtimes</h3>
     <table class="table table-striped table-hover">
         <thead>
             <tr>
@@ -21,7 +12,7 @@
                 <th>Title</th>
                 <th>Showtime</th>
                 <th>Auditorium</th>
-                <th>Ticket Price ($)</th>
+                <th>Ticket Price</th>
                 <th width="220px">Action</th>
             </tr>
         </thead>
@@ -31,16 +22,17 @@
                 <td>{{ movie.title }}</td>
                 <td>{{ movie.showtime }}</td>
                 <td>{{ movie.auditorium }}</td>
-                <td>{{ movie.ticket_price }}</td>
+                <td>{{ movie.ticket_price | currency:'USD' }}</td>
                 <td>
-                    <a href="#" [routerLink]="['/order-summary/', movie.id]" class="btn btn-primary">Book Ticket</a>
+
+                    <!--Ticket added to cart-->
+                    <button (click)="addToCart(movie)" class="btn btn-primary btn-sm>">Add to cart</button>
                 </td>
             </tr>
         </tbody>
     </table>
-</div>
+    </div>
 
-<!--Footer-->
 <div class="container-fluid">
     <app-footer></app-footer>
 </div>
