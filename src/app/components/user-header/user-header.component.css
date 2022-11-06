@@ -1,17 +1,7 @@
-body {
-    margin: 0;
-    font-family:Arial, Helvetica, sans-serif;
-  }
-
-.img {
-    width: auto;
-    height: 100vh;
-    text-align: center;
-}
 
 .navbar {
-    list-style-type: none;
-    background-color: #000000;
+  list-style-type: none;
+  background-color: #000000;
 	width: 100vw;
 	height: auto;
 	left: 0px;

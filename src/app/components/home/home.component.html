@@ -1,18 +1,24 @@
-<div class="container-fluid">
     <app-user-header></app-user-header>
+
+<body>
+<div class="container-fluid mx-auto" id="hero">
+    <div class="row">                        
+        <div class="col-sm-12">
+
+    <div>
+        <img src="assets/images/cinema-hero.png" alt="Cinema">
+    </div>
+</div>
+</div>
 </div>
 
     <!--Carousel of Theatre Info-->
-    <div class="container-fluid" id="hero">
-        <div>
-            <img src="assets/images/cinema-hero.png" class="w-100" alt="Cinema">
-        </div>
-    </div>
+
 
     <!--Movie List-->
-    <div class="now-playing">
-        <h1><strong>Now Playing</strong></h1>  
-    </div>
+    <div class="container-fluid mx-auto" id="now-playing-info">
+        <h1><strong>Now Playing</strong></h1>
+        <div class="row">  
     <div class="movie-list" style="background-color: lightblue">
     <table class="table table-sm">
         <thead>
@@ -76,6 +82,9 @@
         </tbody>
       </table>
     </div>
+</div>
+</div>
+
 
     <!--Movie Features-->
     <div class="container-fluid align-center">
@@ -138,7 +147,5 @@
             </div>
         </div>
     </div>
-
-<div class="container-fluid">
+</body>
     <app-footer></app-footer>
-</div>

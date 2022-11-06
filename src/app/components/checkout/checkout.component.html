@@ -1,8 +1,8 @@
 <app-user-header></app-user-header>
 
-
+<body>
 <div class="checkout-form">
-        <div class="container-fluid">
+        <div class="container-fluid" id="form">
             <form [formGroup]="checkoutFormGroup" (ngSubmit)="onSubmit()">
 
                 <div formGroupName="customer" class="form-area">
@@ -133,4 +133,4 @@
                     </form>
             </div>
 </div>
-
+</body>
