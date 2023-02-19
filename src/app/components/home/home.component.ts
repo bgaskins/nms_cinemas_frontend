@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Movies } from '../../classes/movies';
+import { MovieServiceService } from '../../services/movie-service.service';
 
 @Component({
   selector: 'app-home',
@@ -8,9 +10,15 @@ import { Router } from '@angular/router';
 })
 export class HomeComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  movies: Movies[] = [];
 
-  ngOnInit(): void {
+  constructor(private router: Router, private movieService: MovieServiceService) { }
+
+  ngOnInit() {
+    this.movieService.getAllMovies().subscribe((data: Movies[]) => {
+      console.log(this.movies);
+      this.movies = data;
+    });
   }
 
   onSubmit() {

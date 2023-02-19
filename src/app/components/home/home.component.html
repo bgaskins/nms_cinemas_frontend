@@ -1,83 +1,34 @@
-    <app-user-header></app-user-header>
+<div class="container-fluid">
 
-<body>
-<div class="container-fluid mx-auto" id="hero">
-    <div class="row">                        
-        <div class="col-sm-12">
-
-    <div>
+    <div class="hero">
         <img src="assets/images/cinema-hero.png" alt="Cinema">
     </div>
-</div>
-</div>
-</div>
 
-    <!--Carousel of Theatre Info-->
+</div>
 
 
     <!--Movie List-->
-    <div class="container-fluid mx-auto" id="now-playing-info">
+    <div class="container" id="now-playing-info">
         <h1><strong>Now Playing</strong></h1>
         <div class="row">  
     <div class="movie-list" style="background-color: lightblue">
     <table class="table table-sm">
         <thead>
           <tr>
-            <th scope="col"></th>
             <th scope="col">Movie</th>
-            <th scope="col">Time</th>
-            <th scope="col">Rating</th>
+            <th scope="col">Showtime</th>
+            <th scope="col">Auditorium</th>
+            <th scope="col">Price</th>
+
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <th scope="row">1</th>
-            <td>The Ruins</td>
-            <td>12:00PM</td>
-            <td>R</td>
-          </tr>
-          <tr>
-            <th scope="row">2</th>
-            <td>Scream</td>
-            <td>8:00PM</td>
-            <td>R</td>
-          </tr>
-          <tr>
-            <th scope="row">3</th>
-            <td>Halloween</td>
-            <td>6:00PM</td>
-            <td>R</td>
+          <tr *ngFor="let movie of movies">
+            <td scope="col">{{ movie.title }}</td>
+            <td scope="col">{{ movie.showtime }}</td>
+            <td scope="col">{{ movie.auditorium }}</td>
+            <td scope="col">{{ movie.ticket_price | currency:'USD' }}</td>
 
-          </tr>
-          <tr>
-            <th scope="row">1</th>
-            <td>Luck</td>
-            <td>9:00PM</td>
-            <td>G</td>
-          </tr>
-          <tr>
-            <th scope="row">2</th>
-            <td>The Estate</td>
-            <td>9:00PM</td>
-            <td>R</td>
-          </tr>
-          <tr>
-            <th scope="row">3</th>
-            <td>Black Adam</td>
-            <td>7:30PM</td>
-            <td>PG-13</td>
-          </tr>
-          <tr>
-            <th scope="row">3</th>
-            <td>Amsterdam</td>
-            <td>8:00PM</td>
-            <td>R</td>
-          </tr>
-          <tr>
-            <th scope="row">3</th>
-            <td>Bullet Train</td>
-            <td>6:00PM</td>
-            <td>R</td>
           </tr>
         </tbody>
       </table>
@@ -89,7 +40,7 @@
     <!--Movie Features-->
     <div class="container-fluid align-center">
         <div class="row p-5">
-            <div class="col-lg-4 mb-3 mx-auto">
+            <div class="col-md-4 mb-3 mx-auto">
                 <div class="card h-100" style="width: 16rem;">
                     <img src="./assets/images/movies/scream.png" class="card-img-top" alt="Scream">
                     <div class="card-body h-50">
@@ -100,7 +51,7 @@
                     </ul>
                 </div>
             </div>
-            <div class="col-lg-4 mb-3 mt-6 mx-auto">
+            <div class="col-md-4 mb-3 mt-6 mx-auto">
                 <div class="card h-100" style="width: 16rem;">
                     <img src="./assets/images/movies/black-adam.png" class="card-img-top" alt="Black Adam">
                     <div class="card-body h-50">
@@ -111,7 +62,7 @@
                     </ul>
                 </div>
             </div>
-            <div class="col-lg-4 mb-3 mt-6 mx-auto align-items-stretch">
+            <div class="col-md-4 mb-3 mt-6 mx-auto align-items-stretch">
                 <div class="card h-100" style="width: 16rem;">
                     <img src="./assets/images/movies/amsterdam.png" class="card-img-top" alt="Amsterdam">
                     <div class="card-body h-50">
@@ -147,5 +98,3 @@
             </div>
         </div>
     </div>
-</body>
-    <app-footer></app-footer>

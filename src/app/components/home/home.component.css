@@ -1,4 +1,4 @@
-html, body {
+.container-fluid {
     background-color: #ffffff;
     font-family:Arial, Helvetica, sans-serif;
     width: 100%;
@@ -6,10 +6,12 @@ html, body {
     margin: 0px;
     padding: 0px;
     text-align: center;
-    overflow-x:visible; 
 }
 
-
+img {
+    width: 100%;
+    height:100%;
+}
 
 
 #now-playing-info {
@@ -17,7 +19,6 @@ html, body {
     font-family:Arial, Helvetica, sans-serif;
     text-align: center;
     color: #ffffff;
-    margin-top: 1em;
 }
 
 #now-playing-info, h1 {
