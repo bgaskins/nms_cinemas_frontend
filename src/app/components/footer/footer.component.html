@@ -7,7 +7,7 @@
                                 <img src="/assets/images/footer-logo.png" alt="NMS Cinemas Logo" style="width: 150px; height: 150px;">
                             </div>
                         </div>
-                    <div class="col-4 " id="footer-links">
+                    <div class="col-4" id="footer-links">
                          <div class="site-footer-nav" id="links">
                             <ul class="footer-nav-list">
                                 <ul class="footer-nav-list">
@@ -17,16 +17,20 @@
                                     <li><a *ngIf="!hardcodedAuthenticationService.IsUserLoggedIn()" routerLink="/admin-login"
                                         class="nav-link">Admin Login</a></li>
                                     <li><a href="#" class="about"><i class="fa-brands fa-square-instagram"></i></a></li>
+                                    <p class="address">123 Main St.<br>Boston, Ma. 02108<p>
                                 </ul>
                             </ul>
                         </div>
                         </div>
-                        <div class="col-4">
+                        <div class="col-4" id="help-links">
                         <ul class="footer-nav-list">
                             <li><a href="#" class="help">Help</a></li>
                             <li><a href="#" class="contact us">Contact Us</a></li>
-                            <li><a href="#" class="about">Locations</a></li>
-                            <p class="address">123 Main St.<br>Boston, Ma. 02108<p>
+                            <li><a href="#" class="about">Locations</a></li>    
+                                <div class="social-icons">
+                                    <a href="#" class="insta-link"><fa-icon [icon]="faInstagram"></fa-icon></a>
+                                    <a href="#" class="insta-link"><fa-icon [icon]="faFacebook"></fa-icon></a>
+                                </div>        
                         </ul>
                     </div>
                 </div>

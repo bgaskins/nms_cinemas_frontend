@@ -1,7 +1,9 @@
 <!--User login... Username: movies Password: movie123-->
-<h1>Login</h1>
-
 <div class="container">
+    <div class="login-box">
+
+    <h1>Login</h1>
+
     <form>
         <!-- User username input -->
         <div class="form-outline mb-2 w-25 mx-auto">
@@ -15,11 +17,12 @@
             <label class="form-label">Password</label>
         </div>
 
-        <button type="button" (click)="handleLogin()" class="btn align-center">Login</button>
+        <button type="button" (click)="handleLogin()" class="btn">Login</button>
         
         <!-- Registration if user has no login-->
         <div class="text-center mt-3">
             <p>Not a member? <a href="/user-registration">Register</a></p>
         </div>
     </form>
+    </div>
 </div>

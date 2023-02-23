@@ -15,21 +15,13 @@ nav{
 .logo, a {
   position: relative;
   top: 5px;
-  left: 16px;
+  left: 16px; 
   display: flex;
-  color: #33adff;
+  color: #38c3ca;
   font-size: 24px;
   font-weight: bold;
   text-decoration:none;
 
-}
-
-/*SYMBOL*/
-span {
-  position: relative;
-  left: 1px;
-  font-size:8px;
-  text-decoration: none;
 }
 
 /*LINKS AND CART STATUS*/
@@ -59,7 +51,9 @@ span {
   text-decoration-thickness: 3px;
   text-decoration-color: #ffffff;}
 
-
+.social-icons{
+  display: none;
+}
 .open{
   position: absolute;
   top: 1em;
@@ -77,12 +71,12 @@ span {
 
 }
 
-/*CART QUANTITY AND COST*/
+/*------------ Cart --------------*/
 .cart-status {
   display: flex;
   position: relative;
   top: 6px;
-  left: 6px;
+  left: 10px;
 }
 
 
@@ -167,10 +161,24 @@ font-size:12px;
     text-decoration-thickness: 3px;
     text-decoration-color: #ffffff;
 }
-  /*  CART QUANTITY AND COST  */
+  /*  Cart   */
   .cart-status {
     margin-left: 2em;
   }
+
+  /*  Social icons */
+
+  .social-icons {
+    position: relative;
+    left: 2em;
+    display: flex;
+    
+  }
+  
+  .social-icons > a {
+    margin: 5px;
+  }
+  
 }
 
 /* --------------------------*/

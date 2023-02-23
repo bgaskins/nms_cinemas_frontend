@@ -1,7 +1,7 @@
 <nav>
     <!-- Logo -->
     <div class="logo">
-      <a href="/home">NMS Cinemas<span>®</span></a>
+      <a href="/home">NMS Cinemas<span style="font-size: 8px; margin-top: 5px;">®</span></a>
     </div>
       <ul class="nav-list">
         <div class="close" (click)="toggleNavList('close')">
@@ -18,7 +18,10 @@
             class="nav-link">Logout</a></li>
         
         <div class="cart-status"><app-cart-status></app-cart-status></div>
-      
+        <div class="social-icons">
+          <a href="#" class="insta-link" style="color:#ffffff"><fa-icon [icon]="faInstagram"></fa-icon></a>
+          <a href="#" class="insta-link" style="color:#ffffff"><fa-icon [icon]="faFacebook"></fa-icon></a>
+      </div>    
       </ul>
 
     <div class="open" (click)="toggleNavList('open')">

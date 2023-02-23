@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HardcodedAuthenticationService } from 'src/app/services/hardcoded-authentication.service';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
+import { faInstagram, faFacebook } from '@fortawesome/free-brands-svg-icons';
 
 
 @Component({
@@ -12,6 +13,8 @@ export class UserHeaderComponent implements OnInit {
 
   isUserLoggedIn: boolean = false;
   faBars = faBars;
+  faInstagram = faInstagram;
+  faFacebook = faFacebook;
 
   constructor(public hardcodedAuthenticationService: HardcodedAuthenticationService) { }
 
