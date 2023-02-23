@@ -1,100 +1,76 @@
 <div class="container-fluid">
 
-    <div class="hero">
-        <img src="assets/images/cinema-hero.png" alt="Cinema">
+    <!-- Header/Hero with sign up button-->
+<div class="hero">
+        <img src="assets/images/hero-lights.png" alt="Cinema">
     </div>
-
+    <div class="hero-box">
+        <h6>NMS MOVIE CLUB EXCLUSIVE</h6>
+        <h1>Watch Unlimited Movies with an NMS Cinema Pass</h1>
+        <p>Sign up now and get 8 buddy passes.<span>*</span></p>
+        <a href="/now-playing">
+            <button class="btn">Sign Up</button>
+        </a>
 </div>
-
-
-    <!--Movie List-->
-    <div class="container" id="now-playing-info">
-        <h1><strong>Now Playing</strong></h1>
-        <div class="row">  
-    <div class="movie-list" style="background-color: lightblue">
-    <table class="table table-sm">
-        <thead>
-          <tr>
-            <th scope="col">Movie</th>
-            <th scope="col">Showtime</th>
-            <th scope="col">Auditorium</th>
-            <th scope="col">Price</th>
-
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let movie of movies">
-            <td scope="col">{{ movie.title }}</td>
-            <td scope="col">{{ movie.showtime }}</td>
-            <td scope="col">{{ movie.auditorium }}</td>
-            <td scope="col">{{ movie.ticket_price | currency:'USD' }}</td>
-
-          </tr>
-        </tbody>
-      </table>
-    </div>
-</div>
-</div>
-
 
     <!--Movie Features-->
-    <div class="container-fluid align-center">
+    <div class="featured">
         <div class="row p-5">
-            <div class="col-md-4 mb-3 mx-auto">
-                <div class="card h-100" style="width: 16rem;">
-                    <img src="./assets/images/movies/scream.png" class="card-img-top" alt="Scream">
-                    <div class="card-body h-50">
-                        <h5 class="card-title text-center">Scream</h5>
+            <div class="col">
+                <div class="card">
+                    <img src="./assets/images/movies/scream6.png" class="card-img-top" alt="Scream">
+                    <div class="card-body">
+                        <h5 class="card-title text-center">Scream VI</h5>
+                        <p>Rated R | 2h 3m</p>
+                        <div class="showtime-button">
+                            <a href="/now-playing" class="btn">Get Tickets</a>
+                        </div>
                     </div>
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item text-center">Rated R | 91m</li>
-                    </ul>
                 </div>
             </div>
-            <div class="col-md-4 mb-3 mt-6 mx-auto">
-                <div class="card h-100" style="width: 16rem;">
-                    <img src="./assets/images/movies/black-adam.png" class="card-img-top" alt="Black Adam">
-                    <div class="card-body h-50">
-                        <h5 class="card-title text-center">Black Adam</h5>
+            <div class="col">
+                <div class="card">
+                    <img src="./assets/images/movies/wonka.png" class="card-img-top" alt="Wonka">
+                    <div class="card-body">
+                        <h5 class="card-title text-center">Wonka</h5>
+                        <p>Rated PG-13 | 2h 22m</p>
+                        <div class="showtime-button">
+                            <a href="/now-playing" class="btn">Get Tickets</a>
+                        </div>
                     </div>
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item text-center">Rated PG-13 | 2h 5m</li>
-                    </ul>
                 </div>
             </div>
-            <div class="col-md-4 mb-3 mt-6 mx-auto align-items-stretch">
-                <div class="card h-100" style="width: 16rem;">
-                    <img src="./assets/images/movies/amsterdam.png" class="card-img-top" alt="Amsterdam">
-                    <div class="card-body h-50">
-                        <h5 class="card-title text-center">Amsterdam</h5>
-
+            <div class="col">
+                <div class="card">
+                    <img src="./assets/images/movies/pussnboots.png" class="card-img-top" alt="Puss and Boots">
+                    <div class="card-body">
+                        <h5 class="card-title text-center">Puss in Boots</h5>
+                        <p>Rated PG | 1h 40m</p>
+                        <div class="showtime-button">
+                            <a href="/now-playing" class="btn">Get Tickets</a>
+                        </div>
                     </div>
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item text-center">Rated R | 2h 14m</li>
-                    </ul>
                 </div>
-            </div>
-            <div class="get-ticket-button text-center">
-                <a href="/now-playing" class="btn">Get Tickets</a>
             </div>
         </div>
-    </div>
+
+
+          
     
     <!--More Theatre Information (Reservations)-->
-    <div class="container-fluid p-5 align-center" id="lower-info">
-        <div class="row">
-            <div class="col-sm-4">
-                <img src="./assets/images/moviegoers.png" alt="Movie Goers" style="width:280px; height:280px">
+<div class="footer-area-ad">
+    <div class="bottom-info">
+            <div class="col-30">
+                <img src="./assets/images/moviegoers.png" alt="Movie Goers" style="width: 325px; height: 325px">
             </div>
-            <div class="col-sm-8">
-                <div class="reservation-content">
-                    <h1 style="color:#7000cb; margin-bottom: .25em"><strong> Reserve your private screening now! </strong></h1>  
-                    <h3 style="color:#0054d1; margin-bottom: .5em"> Current release titles available for private screenings <strong>starting at $200.</strong></h3>
-                    <h6 style="color:#000000"> Bring up to 20 guests. </h6>
-                    <div class="get-ticket-button text-left">
-                        <a href="/contact-us" class="btn">Reserve Now</a>
+            <div class="col-70">
+                    <h1><strong>Go big with a private screening</strong></h1>  
+                    <h3> Watch 2 new releases with snacks <strong>—starting at $200.<span>*</span></strong></h3>
+                    <h6> Bring up to 20 guests. </h6>
+                    <div class="reserve-button">
+                        <a href="/contact-us" class="btn button">Reserve Now</a>
                     </div>
-                </div>
             </div>
-        </div>
     </div>
+</div>
+</div> 

@@ -4,7 +4,8 @@
         "fontawesome",
         "fortawesome",
         "Haddonfield",
-        "nmscinemasfront"
+        "nmscinemasfront",
+        "Showtimes"
     ],
     "typescript.tsdk": "node_modules/typescript/lib"
 }

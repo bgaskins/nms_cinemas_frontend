@@ -1,64 +1,179 @@
 .container-fluid {
     background-color: #ffffff;
-    font-family:Arial, Helvetica, sans-serif;
     width: 100%;
     height: 100%;
-    margin: 0px;
-    padding: 0px;
+    margin: 0;
+    padding: 0;
     text-align: center;
 }
+
 
 img {
     width: 100%;
-    height:100%;
+    height: auto;
+    z-index: 0;
 }
 
+.hero-box {
+    position: relative;
+    bottom: 19em;
+    left: 2em;
+    width: 500px;
+    height: 155px;
+    text-align: left;
+    color: #ffffff;
+    opacity: 95%;
+    z-index: 1;
+    box-sizing: border-box;
+    padding: 1em;
+}
 
-#now-playing-info {
-    background-color: #000000;
-    font-family:Arial, Helvetica, sans-serif;
-    text-align: center;
+h6 {
+    font-weight: 400;
+}
+
+.hero-box > a > .btn {
+    background-color: #f85834;
     color: #ffffff;
 }
 
-#now-playing-info, h1 {
-        text-align: center;
-
+span {
+    font-size: 12px;
 }
 
-.movie-list {
-    background-color: #242E51;
-}
-
-.movie-cards {
-    font-family:Arial, Helvetica, sans-serif;
-    top: 30px;
-    text-align:center;
-    color:#000000
+.featured {
+    position: relative;
+    bottom: 8em;
+    text-align: center;
 }
 
 .card {
+    width: 100%;
+    height: 100%;
     border: none;
-
 }
+
+.card img {
+    align-self: center;
+    width: 200px;
+    height: 300px;
+}
+
 
 .btn {
     background-color:#000000;
     color: #ffffff;
 }
 
-#lower-info {
-    margin-bottom: 5em;
-    overflow: visible;
+
+/*----------Screening Reservation Section----------*/
+.footer-area-ad {
+    width: 100%;
+    height: 100%;
+}
+.bottom-info {
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    background-color:#04113a;
+}
+
+.bottom-info > .col-30 {
+    width: 30%;
+}
+
+.bottom-info > .col-70{
+    width: 70%;
+    position: relative;
+    top: 2.5em;
+    text-align: left;
+}
+
+
+.bottom-info > .col-70 > h1{
+    width: 80%;
+    color:#ffffff; 
+    margin-left: 1.6em;
+    margin-bottom: .25em
+}
+
+.bottom-info > .col-70 > h3 {
+    width: 70%;
+    color:#64b0d0; 
+    margin-left: 2.2em;
+    margin-bottom: .5em
+}
+
+.bottom-info > .col-70 > h6 {
+    margin-left: 3.8em;
+    color:#ffffff;
+}
+
+
+.reserve-button > .btn {
+    margin-left: 4em;
+    margin-top: 2em;
+    background-color: #f85834;
+    color: #ffffff;
+}
+
+
+
+/*----------Media----------*/
+
+
+@media(width < 1080px) {
+
+    /*Bottom-info text block*/
+    .bottom-info > .col-70{
+        width: 70%;
+        top: 2em;
+        left: 2em;
+        }
+    /*Bottom-info button*/
+    .reserve-button > .btn {
+        margin-left: 4em;
+        margin-top: 2em;
+
+        }
+    
+}
+
+@media(width < 768px) {
+
+
+    /*Bottom-info text block*/
+    .bottom-info > .col-70{
+        width: 80%;
+        top: 1.5em;
+        left: 4.5em;
+    }
+    /*Bottom-info button*/
+    .reserve-button > .btn {
+        text-align:center;
+
+    }
+
+    .bottom-info > .col-30 {
+        display: none;
+    }
 
 }
 
-.reservation-content {
-    font-family:Arial, Helvetica, sans-serif;
-    margin-bottom: 2em;
-    margin-left: 1em;
+@media(width < 480px) {
+
+    img {
+        height: 250px
+    }
+
+    .hero-box {
+        display: none;
+    }
+
+    
+
 }
 
-.get-ticket-button {
-    margin-top: 1em;
-}
+
+

@@ -1,30 +1,18 @@
 <!--Movies now playing-->
-<div class="container" id="movie-dashboard">
+<div class="container">
     <h3>Showtimes</h3>
-    <table class="table table-striped table-hover">
-        <thead>
-            <tr>
-                <th>Movie Ticket Id</th>
-                <th>Title</th>
-                <th>Showtime</th>
-                <th>Auditorium</th>
-                <th>Ticket Price</th>
-                <th width="220px">Action</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let movie of movies">
-                <td>{{ movie.id }}</td>
-                <td>{{ movie.title }}</td>
-                <td>{{ movie.showtime }}</td>
-                <td>{{ movie.auditorium }}</td>
-                <td>{{ movie.ticket_price | currency:'USD' }}</td>
-                <td>
+    <div class="movies">
+        <div class="row">
+            <!-- This iterates over a list of movies -->
+            <div *ngFor="let movie of movies" class="col-4">
 
-                    <!--Ticket added to cart-->
+                    <!-- Displays movie image-->
+                    <img src="{{ movie.image_url }}" class="img-responsive">
+                    <h1>{{ movie.title }}</h1>
+                    <p>{{ movie.showtime }}</p>
+                    <div class="price">{{ movie.ticket_price | currency:'USD' }}</div>
                     <button (click)="addToCart(movie)" class="btn btn-primary btn-sm>">Add to cart</button>
-                </td>
-            </tr>
-        </tbody>
-    </table>
+            </div>
+        </div>
     </div>
+</div>
