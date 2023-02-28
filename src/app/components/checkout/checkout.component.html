@@ -1,132 +1,104 @@
-<div class="checkout-form">
-        <div class="container-fluid" id="form">
-            <form [formGroup]="checkoutFormGroup" (ngSubmit)="onSubmit()">
+<div class="container">
+    <div class="checkout-form">
+        <div class="row">
+            <!-- Contains column for the cart items -->
+            <div class="left-input">
+                <div class="cart">
+                  <!--Header-->
+                  <h3>Cart</h3><hr>
+                  <div class="cart-item">
+                    <table class="table table-responsive">
+                      <tr>
+                          <th width="30%">Title</th>
+                          <th width="30%">Qty</th>
+                          <th width="30%">Price</th>
+                      </tr>
+                  <!-- Loop for the cart items -->
+                    <tr *ngFor="let cartItem of cartItems"> 
+                        <td>
+                          <!-- Name of the cart item -->
+                           <p>{{ cartItem.title }}</p>
+                        </td>
+                        <td>
+                          <!-- Quantity of the cart item -->
+                          <p>{{ cartItem.quantity }}</p>
+                        </td>
+                       <td>
+                          <!-- Price of the cart item in USD -->
+                           <p>{{ cartItem.ticket_price | currency: 'USD' }}</p>
+                       </td> 
+                      </tr>
+                      </table>
+                      <p>Total <span class="price" style="color:#000000"><b>{{ totalPrice | currency: 'USD' }}</b></span></p>
+                  
+                  </div> 
+                  <hr>
 
-                <div formGroupName="customer" class="form-area">
-                    <h4>Customer</h4>
-                    <div class="row">
-                        <div class="col-md-2"> <label> First Name </label></div>
-                        <input formControlName="firstName" type="text">
-                    <div class="row">
-                        <div class="col-md-2"> <label> Last Name </label></div>
-                        <input formControlName="lastName" type="text">
+                <!-- Form for the user to input their billing and payment details -->
+                <!--Billing info-->
+                <form action="/">
+                  <div class="row">
+                    <div class="input-area" id="billing">
+                      <h3>Billing Address</h3>
+                      <label for="fname"><i class="fa-regular fa-face-smile"></i> Full Name</label>
+                      <input type="text" id="fname" name="firstname" placeholder="James Doe">
+                      <label for="email"><i class="fa-regular fa-at"></i> Email</label>
+                      <input type="text" id="email" name="email" placeholder="james@example.com">
+                      <label for="addr"><i class="fa fa-address-card"></i> Address</label>
+                      <input type="text" id="addr" name="address" placeholder="123 Main St.">
+                      <label for="city"><i class="fa-solid fa-city"></i> City</label>
+                      <input type="text" id="city" name="city" placeholder="Boston">
+          
+                      <div class="row">
+                        <div class="input-area">
+                          <label for="state">State</label>
+                          <input type="text" id="state" name="state" placeholder="MA">
+                        </div>
+                        <div class="input-area">
+                          <label for="zip">Zip</label>
+                          <input type="text" id="zip" name="zip" placeholder="02108">
+                        </div>
+                      </div>
                     </div>
-                    <div class="row">
-                        <div class="col-md-2"> <label> Email </label></div>
-                        <input formControlName="email" type="text">
+                    <!--Payment info-->
+                    <div class="input-area" id="payment">
+                      <h3>Payment</h3>
+                      <label for="fname">Accepted Cards</label>
+                      <div class="cc-icon-container">
+                        <fa-icon [icon]="faCcVisa" class="icon" style="color:#000000;" alt="visa-icon"></fa-icon>
+                        <fa-icon [icon]="faCcAmex" class="icon" style="color:#000000;" alt="visa-icon"></fa-icon>
+                        <fa-icon [icon]="faCcMastercard" class="icon" style="color:#000000;" alt="visa-icon"></fa-icon>
+                        <fa-icon [icon]="faCcDiscover" class="icon" style="color:#000000;" alt="visa-icon"></fa-icon>
+                      </div>
+                      <label for="cname">Name on Card</label>
+                      <input type="text" id="cname" name="cardname" placeholder="James Doe">
+                      <label for="ccnum">Credit card number</label>
+                      <input type="text" id="ccnum" name="cardnumber" placeholder="555 - 222 - 4444">
+                      <label for="expmonth">Exp Month</label>
+                      <input type="text" id="expmonth" name="expmonth" placeholder="10">
+          
+                      <div class="row">
+                        <div class="input-area">
+                          <label for="expyear">Exp Year</label>
+                          <input type="text" id="exp year" name="exp year" placeholder="2023">
+                        </div>
+                        <div class="input-area">
+                          <label for="cvv">CVV</label>
+                          <input type="text" id="cvv" name="cvv" placeholder="352">
+                        </div>
+                      </div>
                     </div>
-                </div>
-                </div>
-
-                    <!--Mailing Address-->
-
-                    <div formGroupName="mailingAddress" class="form-area">
-                        <h4>Mailing Address</h4>
-                        <div class="row">
-                            <div class="col-md-2"> <label> Address </label></div>
-                            <input formControlName="address" type="text">
-                        </div>
-                        <div class="row">
-                            <div class="col-md-2"> <label> City </label></div>
-                            <input formControlName="city" type="text">
-                        </div>
-                        <div class="row">
-                            <div class="col-md-2"> <label> State </label></div>
-                            <input formControlName="state" type="text">
-                        </div>
-                        <div class="row">
-                            <div class="col-md-2"> <label> Country </label></div>
-                            <input formControlName="country" type="text">
-                        </div>
-                        <div class="row">
-                            <div class="col-md-2"> <label> Zipcode </label></div>
-                            <input formControlName="zipcode" type="text">
-                        </div>
-                        </div>
-
-
-                        <!--Billing address -->
-
-                        <div formGroupName="billingAddress" class="form-area">
-                            <h4>Billing Address</h4>
-                            <div class="row">
-                                <div class="col-md-2"> <label> Address </label></div>
-                                <input formControlName="address" type="text">
-                            </div>
-                            <div class="row">
-                                <div class="col-md-2"> <label> City </label></div>
-                                <input formControlName="city" type="text">
-                            </div>
-                            <div class="row">
-                                <div class="col-md-2"> <label> State </label></div>
-                                <input formControlName="state" type="text">
-                            </div>
-                            <div class="row">
-                                <div class="col-md-2"> <label> Country </label></div>
-                                <input formControlName="country" type="text">
-                            </div>
-                            <div class="row">
-                                <div class="col-md-2"> <label> Zipcode </label></div>
-                                <input formControlName="zipcode" type="text">
-                            </div>
-                        </div>
-    
-                        <!--Credit card-->
-
-                        <div formGroupName="creditCard" class="form-area">
-                            <h4>Credit Card</h4>
-                            <div class="row">
-                                <div class="col-md-2"> <label> Card Type </label></div>
-                                <div class="col-md-9">
-                                    <div class="input-space">
-                                        <select formControlName="cardType">
-                                        <option>Visa</option>
-                                        <option>Mastercard</option>
-                                        <option>Apple Pay</option>
-                                        <option>American Express</option>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-2"> <label> Name on Card</label></div>
-                                    <input formControlName="name" type="text">
-                            </div>
-                            <div class="row">
-                                <div class="col-md-2"> <label> Card Number </label></div>
-                                <input formControlName="cardNumber" type="text">
-                            </div>
-
-                            <div class="row">
-                                <div class="col-md-2"> <label> Expiration Month </label></div>
-                                    <input formControlName="expMonth" type="text">
-                            </div>
-
-                            <div class="row">
-                                <div class="col-md-2"> <label> Expiration Year </label></div>
-                                    <input formControlName="expYear" type="text">
-                            </div>
-
-                            <div class="row">
-                                <div class="col-md-2"> <label> Security Code </label></div>
-                                <input formControlName="securityCode" type="text">
-                            </div>
-                        </div>
-
-                       
-                    <!-- Order details -->
-                    <div class="form-area">
-                        <h4>Review Your Order</h4>
-
-                        <p>Total Quantity: {{ totalQuantity }}</p>
-                        <p>Shipping: FREE</p>
-                        <p>Total Price: {{ totalPrice | currency: 'USD' }}</p>
-                    </div>
-                        <!-- Purchase button-->
-                        <div class="text-center">  
-                            <button type="submit" class="btn btn-info">Buy
-                            </button>
-                        </div>
-                    </form>
+                    <!--Checkbox for similar shipping and billing addresses-->
+                  </div>
+                  <label>
+                    <input type="checkbox" checked="checked" name="sameadr"> Shipping address same as billing
+                  </label>
+                  <button type="submit" class="btn btn-sm">Submit</button>
+                  <a href="#" routerLink="/cart-details" class="btn">Back</a>
+                </form>
+              </div>
             </div>
+          </div>
+                <!--END OF FORM-->
+        </div>
 </div>

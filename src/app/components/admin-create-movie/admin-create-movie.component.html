@@ -1,36 +1,46 @@
-<h3>Add A Movie</h3>
-<form>
-        <form [formGroup]="form" (ngSubmit)="submit()">
-        <div class="form-group mb-2 w-50 mx-auto">
-            <label for = "title">Movie Title</label>
-            <input formControlName="title" id="title"
-            type="text" class="form-control" name="title">
-        </div>
+<div class="container">
 
-        <div class="form-group mb-2 w-50 mx-auto">
-            <label for = "ticket_price">Ticket Price</label>
-            <input formControlName="ticket_price" id="title" type="text" class="form-control">
-        </div>
+    <!--Movie created and stored in movie database-->
+    <div class="add-movie-box">
+        <h3>Add A Movie</h3>
+            <form>
+                <form [formGroup]="form" (ngSubmit)="onSubmit()">
+                    
+                    <div class="form-group">
+                        <label for = "title">Movie Title</label>
+                        <input formControlName="title" id="title"type="text" class="form-control" name="title">
+                    </div>
+                    <div class="form-group">
+                        <label for = "ticket_price">Ticket Price</label>
+                        <input formControlName="ticket_price" id="title" type="text" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for = "language">Language</label>
+                        <input formControlName="language" id="language" type="text" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for = "description">Description</label>
+                        <input formControlName="description" id="description" type="text" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for = "showtime">Showtime</label>
+                        <input formControlName="showtime" id="showtime" type="text" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for = "auditorium">Auditorium</label>
+                        <input formControlName="auditorium" id="auditorium" type="text" class="form-control">
+                    </div>
 
-        <div class="form-group mb-2 w-50 mx-auto">
-            <label for = "language">Language</label>
-            <input formControlName="language" id="language" type="text" class="form-control">
-        </div>
-
-        <div class="form-group mb-2 w-50 mx-auto">
-            <label for = "description">Description</label>
-            <input formControlName="description" id="description" type="text" class="form-control">
-        </div>
-
-        <div class="form-groupmb-2 w-50 mx-auto">
-            <label for = "showtime">Showtime</label>
-            <input formControlName="showtime" id="showtime" type="text" class="form-control">
-        </div>
-
-        <div class="form-group mb-2 w-50 mx-auto">
-            <label for = "auditorium">Auditorium</label>
-            <input formControlName="auditorium" id="auditorium" type="text" class="form-control">
-        </div>
-<div class="container"> <button type="submit" class="btn align-center">Add Movie</button></div>
-   
-</form>
+                    <!--upload URL of image from AWS S3 bucket (nms-bucket)-->
+                    <div class="form-group">
+                        <label for = "image">Image URL</label>
+                        <input formControlName="image_url" id="image" type="text" class="form-control">
+                    </div>
+                    
+                        <button type="onSubmit" class="btn btn-sm">Add Movie</button>
+                        <a href="#" routerLink="/admin-dashboard" class="btn btn-sm">Back</a>
+            
+                    </form>
+            </form>
+    </div>
+</div>

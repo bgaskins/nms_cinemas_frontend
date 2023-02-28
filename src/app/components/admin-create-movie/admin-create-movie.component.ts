@@ -13,7 +13,7 @@ export class AdminCreateMovieComponent implements OnInit {
   form: FormGroup;
 
 
-  constructor( public movieService: MovieServiceService, private router: Router) { }
+  constructor(public movieService: MovieServiceService, private router: Router) { }
 
   ngOnInit(): void {
     this.form = new FormGroup({
@@ -22,15 +22,17 @@ export class AdminCreateMovieComponent implements OnInit {
       language: new FormControl('', [Validators.required]),
       description: new FormControl('', Validators.required),
       showtime: new FormControl('', [Validators.required]),
-      auditorium: new FormControl('', Validators.required)
+      auditorium: new FormControl('', Validators.required),
+      image_url: new FormControl('', Validators.required)
+
     });
   }
 
-  submit(){
+  onSubmit() {
     console.log(this.form.value);
     this.movieService.createMovie(this.form.value).subscribe(res => {
-         console.log('Movie added successfully!');
-         this.router.navigateByUrl('admin-dashboard');
+      console.log('Movie added successfully!');
+      this.router.navigateByUrl('admin-dashboard');
     })
   }
 }

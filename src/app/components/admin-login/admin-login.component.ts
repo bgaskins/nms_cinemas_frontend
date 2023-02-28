@@ -9,20 +9,20 @@ import { HardcodedAuthenticationService } from 'src/app/services/hardcoded-authe
   styleUrls: ['./admin-login.component.css']
 })
 export class AdminLoginComponent implements OnInit {
-
+  //inputs
   username = '';
   password = '';
   errorMessage = 'Invalid Credentials';
   invalidLogin = false;
 
-  constructor(private formBuilder: FormBuilder, private router: Router,
+  constructor(private router: Router,
     private hardcodedAuthenticationService: HardcodedAuthenticationService) {
 
   }
 
   ngOnInit() {
   }
-
+  //Handles admin login credentials. If valid, user will be taken to admin page.
   handleLogin() {
     if (this.hardcodedAuthenticationService.authenticateAdmin(this.username, this.password)) {
       //redirect to the welcome page

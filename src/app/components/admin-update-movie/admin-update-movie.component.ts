@@ -13,43 +13,41 @@ export class AdminUpdateMovieComponent implements OnInit {
 
   id: number;
   movie: Movies;
-  public form: FormGroup;
+  form: FormGroup;
 
-  constructor(public movieService: MovieServiceService, 
-    private route: ActivatedRoute, 
-    private router: Router, 
+  constructor(public movieService: MovieServiceService, private route: ActivatedRoute, private router: Router,
     private formBuilder: FormBuilder) { }
 
   ngOnInit(): void {
     this.id = this.route.snapshot.params['id'];
-    this.movieService.getMoviesById(this.id).subscribe((data: Movies)=>{
+    this.movieService.getMoviesById(this.id).subscribe((data: Movies) => {
       this.movie = data;
-    });
-
-    this.form = this.formBuilder.group({
-      title: new FormControl('', [Validators.required]),
-      ticket_price: new FormControl('', [Validators.required]),
-      language: new FormControl('', [Validators.required]),
-      description: new FormControl('', [Validators.required]),
-      showtime: new FormControl('', [Validators.required]),
-      auditorium: new FormControl('', [Validators.required])
+      this.form = this.formBuilder.group({
+        id: [this.movie.id],
+        title: [this.movie.title, Validators.required],
+        ticket_price: [this.movie.ticket_price, Validators.required],
+        language: [this.movie.language, Validators.required],
+        description: [this.movie.description, Validators.required],
+        showtime: [this.movie.showtime, Validators.required],
+        auditorium: [this.movie.auditorium, Validators.required],
+        image_url: [this.movie.image_url],
+      });
     });
   }
 
-
-
-  onSubmit(){
-    let response = this.id ? this.movieService.updateMovie(this.id, this.form.value) : this.movieService.createMovie(this.form.value);
-         
-        response.subscribe(
-        data => {
-            console.log('Product created / updated successfully!');
-            this.router.navigateByUrl('admin-dashboard');
-        });
+  onSubmit(): void {
+    if (this.form.invalid) {
+      return;
     }
+
+    this.movieService.updateMovie(this.id, this.form.value).subscribe(
+      () => {
+        console.log('Movie updated successfully!');
+        this.router.navigateByUrl('admin-dashboard');
+      },
+      (error) => {
+        console.log('Failed to update movie:', error);
+      }
+    );
   }
-
-
-
-
-
+}

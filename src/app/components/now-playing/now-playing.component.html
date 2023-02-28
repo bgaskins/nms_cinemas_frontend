@@ -1,6 +1,5 @@
 <!--Movies now playing-->
 <div class="container">
-    <h3>Showtimes</h3>
     <div class="movies">
         <div class="row">
             <!-- This iterates over a list of movies -->
@@ -11,8 +10,9 @@
                     <h1>{{ movie.title }}</h1>
                     <p>{{ movie.showtime }}</p>
                     <div class="price">{{ movie.ticket_price | currency:'USD' }}</div>
-                    <button (click)="addToCart(movie)" class="btn btn-primary btn-sm>">Add to cart</button>
+                    <button (click)="addToCart(movie)" class="btn btn-sm align-self-end">Buy Tickets</button>
             </div>
         </div>
     </div>
 </div>
+ 

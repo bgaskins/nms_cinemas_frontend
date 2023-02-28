@@ -1,24 +1,68 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+.container {
+    background-color: #ffffff;
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.add-movie-box {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    left: 5em;
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 2em;
+    width: 50%;
+    margin: auto;
+
+}
 
 h3 {
     text-align: center;
     margin-top: 3.5em;
 }
 
-.container {
-    margin-top: 3em;
-    margin-bottom: 5em;
-    text-align: center;
-    font-size: 16px;
-    font-family:Arial, Helvetica, sans-serif;
-}
-
-button {
+button, .btn {
     background: #000000;
     color: #FFFFFF;
     margin-top: .5em;
     margin-left: .5em;
     text-align: center;
     font-size: 16px;
-    font-family:Arial, Helvetica, sans-serif;
+}
+
+@media(width < 1080px) {
+    .add-movie-box {
+        left: 4em;
+    }
+
+    .user-input, .pass-input {
+        width: 40%;
+    }
+}
+
+@media(width < 786px) {
+    .login-box {
+        left: 0;
+        text-align: center;
+    }
+
+    .user-input, .pass-input {
+        width: 40%;
+    }
+}
+
+
+
+@media(width < 486px) {
+    .add-movie-box {
+        left: .5em;
+        font-size: 15px;
+        
+    }
 }

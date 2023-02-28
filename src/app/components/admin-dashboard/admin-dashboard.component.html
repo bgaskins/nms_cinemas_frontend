@@ -1,50 +1,40 @@
 <div class="container-fluid">
-    <app-admin-header></app-admin-header>
-</div>
+    <div class="dashboard">
+        <div class="row">
+            <div class="col">
 
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-md-12">
+                <h3>Admin Dashboard</h3>
 
-    <h3>Admin Dashboard</h3>
+                <!--Add a new movie to the database-->
+                <a href="#" [routerLink]="['/admin-create-movie/']" class="btn"><fa-icon [icon]="faPlus"></fa-icon>&nbsp;Add New Movie</a>
 
-    <!--Add a new movie to the database-->
-    <a href="#" [routerLink]="['/admin-create-movie/']" class="btn">Add New Movie</a>
+                <table class="table table-striped table-hover table-responsive">
+                    <thead>
+                        <tr>
+                            <th width="18px">Title</th>
+                            <th width="18px">Showtime</th>
+                            <th width="18px">Aud.</th>
+                            <th width="18px">Price</th>
+                            <th width="18px"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let movie of movies">
+                            <td width="18px">{{ movie.title }}</td>
+                            <td width="18px">{{ movie.showtime }}</td>
+                            <td width="18px">{{ movie.auditorium }}</td>
+                            <td width="18px">{{ movie.ticket_price | currency: 'USD' }}</td>
+                            <td width="14px">    
 
-    <table class="table table-striped table-hover">
-        <thead>
-            <tr>
-                <th>Movie Ticket Id</th>
-                <th>Title</th>
-                <th>Showtime</th>
-                <th>Auditorium</th>
-                <th>Ticket Price</th>
-                <th width="220px">Action</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let movie of movies">
-                <td>{{ movie.id }}</td>
-                <td>{{ movie.title }}</td>
-                <td>{{ movie.showtime }}</td>
-                <td>{{ movie.auditorium }}</td>
-                <td>{{ movie.ticket_price }}</td>
-                <td>
-
-                    <!--Update or delete a movie from the dashboard-->
-                    <a href="#" [routerLink]="['/admin-update-movie/', movie.id]" class="btn btn-primary">Update</a>
-                    <button type="submit" (click)="deleteMovie(movie.id)" class="btn">Delete</button>
-                </td>
-            </tr>
-        </tbody>
-    </table>
+                                <!--Update or delete a movie from the dashboard-->
+                        <a href="#" [routerLink]="['/admin-update-movie/', movie.id]" class="btn btn-sm" style="background-color:#f85834; color:#ffffff;">Update</a>
+                        <button type="submit" (click)="deleteMovie(movie.id)" class="btn btn-sm">Delete</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        </div>
     </div>
 </div>
-</div>
 
 
-
-<!--Footer-->
-<div class="container-fluid">
-    <app-footer></app-footer>
-</div>

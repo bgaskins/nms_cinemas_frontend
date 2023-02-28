@@ -1,18 +1,143 @@
-#empty {
-    margin-bottom: 20em;
-}
-#cart-details {
-    margin-top:14em;
-    font-family:Arial, Helvetica, sans-serif;
+.container {
+  font-family: 'Readex Pro', sans-serif; 
+  background-color: #ffffff;
+  width: 100%;
+  min-height: 700px;
+  height: 100vh;
+  overflow:scroll;
+  }
+  
+  .table{
+      margin-top: 2em;
+      width: 100%;
+      table-layout: fixed;
+  }
+  
+  .table th{
+      border:0 .5px solid #dee2e6;
+  }
+  
+  table.table th{
+      background-color: #47476522;
+      color:#000000;
+      font-size:18px;
+  }
+  
+  td {
+    position: relative;
+    flex-direction: row;
+  
+  }
+  #total, p {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 0;
+  }
+  
+  #payment-summary, #total {
+    background-color: #47476522;
+    color:#000000;
+    font-size:15px;
+    padding:6px;
+  }
+  
+  .btn, button {
+    background-color: #000000;
+    color: #ffffff
+  }
+  
+  button:hover {
+    background-color: #393838; 
+  }
+  
+  .btn:hover {
+    background-color: #393838; 
+  }
+  
+  .button {
+    border: none;
+    padding:8px 10px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+  }
+  
+  
+  
+  
+  #minus, #plus {
+    background:#000000;
+    border: none;
+    color: white;
+    padding: 3px 5px;
+    text-align: center;
+    font-size: 10px;
+  }
+  
+  .alert { 
+      margin: 100px;
+  }
+  
+  
+  @media(width < 1024px){
     
-}
-
-.btn {
-    background-color:#000000;
-    color: #ffffff;
-}
-
-.btn:hover {
-    background-color:#0074c7;
-    color: #ffffff;
-}
+  
+    table.table th{
+      font-size:15px;
+      padding:6px;
+    }
+  
+    #total, p {
+      font-size: 14px;
+    }
+  
+    img {
+      width: auto;
+      height: 100px
+    }
+  
+    label {
+      font-size: 14px;
+    }
+  
+  
+  .button {
+    padding: 8px 12px;
+    font-size: 14px;
+  }
+  
+  #minus, #plus {
+    padding: 3px 5px;
+    font-size: 9px;
+  }
+  
+  }
+  
+  @media(width < 400px){
+    
+    table.table th{
+      font-size:10px;
+      padding:6px;
+    }
+  
+    label {
+      font-size: 12px;
+    }
+  
+    #minus, #plus {
+      padding: 2px 4px;
+      font-size: 8px;
+    }
+  
+    #total, p {
+      font-size: 10px;
+    }
+  
+    .button {
+      font-size: 12px;
+      border-radius: 10px;
+  
+      padding: 4px 10px;
+  
+    }
+  }

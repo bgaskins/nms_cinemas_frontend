@@ -1,53 +1,49 @@
-<div class="container-fluid">
-    <app-admin-header></app-admin-header>
-</div>
-
 <div class="container">
+    <div class="update-movie-input">
+        <h3>Update A Movie</h3>
+            <div>   
+                    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+                    <div class="form-group">
+                        <label for = "title">Movie Title</label><input formControlName="title" id="title" type="text" class="form-control" name="title">
+                    </div>
 
-<h3>Update A Movie</h3>
-<a href="#" routerLink="/admin-dashboard" class="btn btn-primary mt-2 mb-4">Back</a>
+                    <div class="form-group">
+                        <label for = "ticket_price">Ticket Price</label>
+                        <input formControlName="ticket_price" id="title" type="text" class="form-control">
+                    </div>
 
-<div>
-        <form [formGroup]="form" (ngSubmit)="onSubmit()">
-        <div class="form-group mb-2 w-50 mx-auto">
-            <label for = "title">Movie Title</label>
-            <input formControlName="title" id="title"
-            type="text" class="form-control" name="title">
-        </div>
+                    <div class="form-group">
+                        <label for = "language">Language</label>
+                        <input formControlName="language" id="language" type="text" class="form-control">
+                    </div>
 
-        <div class="form-group mb-2 w-50 mx-auto">
-            <label for = "ticket_price">Ticket Price</label>
-            <input formControlName="ticket_price" id="title" type="text" class="form-control">
-        </div>
+                    <div class="form-group">
+                        <label for = "description">Description</label>
+                        <input formControlName="description" id="description" type="text" class="form-control">
+                    </div>
 
-        <div class="form-group mb-2 w-50 mx-auto">
-            <label for = "language">Language</label>
-            <input formControlName="language" id="language" type="text" class="form-control">
-        </div>
+                    <div class="form-group">
+                        <label for = "showtime">Showtime</label>
+                        <input formControlName="showtime" id="showtime" type="text" class="form-control">
+                    </div>
 
-        <div class="form-group mb-2 w-50 mx-auto">
-            <label for = "description">Description</label>
-            <input formControlName="description" id="description" type="text" class="form-control">
-        </div>
+                    <div class="form-group">
+                        <label for = "auditorium">Auditorium</label>
+                        <input formControlName="auditorium" id="auditorium" type="text" class="form-control">
+                    </div>
 
-        <div class="form-groupmb-2 w-50 mx-auto">
-            <label for = "showtime">Showtime</label>
-            <input formControlName="showtime" id="showtime" type="text" class="form-control">
-        </div>
+                    <div class="form-group">
+                        <label for = "image">Image URL</label>
+                        <input formControlName="image_url" id="image" type="text" class="form-control">
+                    </div>
 
-        <div class="form-group mb-2 w-50 mx-auto">
-            <label for = "auditorium">Auditorium</label>
-            <input formControlName="auditorium" id="auditorium" type="text" class="form-control">
-        </div>
+                
+                <button type="submit" class="btn btn-sm">Update</button>
 
+                <a href="#" routerLink="/admin-dashboard" class="btn btn-sm">Back</a>
     
-    <button type="onSubmit" class="btn align-center">Update</button>
-        
-   
-</form>
-</div>
-</div>
-
-<div class="container-fluid">
-    <app-footer></app-footer>
+            
+            </form>
+        </div>
+    </div>
 </div>

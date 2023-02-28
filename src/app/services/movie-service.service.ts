@@ -8,8 +8,6 @@ import { Movies } from '../classes/movies';
 })
 export class MovieServiceService {
 
-  newMovie: Movies[] = [];
-
   url: string = "http://localhost:8080/api/movies/";
   httpOptions = {
     headers: new HttpHeaders({
@@ -27,9 +25,13 @@ export class MovieServiceService {
   createMovie(movies: Movies): Observable<any> {
     return this.http.post(this.url + 'create/', JSON.stringify(movies), this.httpOptions)
   }
-  //Get a movie by ID
+  //Get a movie by ID (Admin dashboard)
   getMoviesById(id: number): Observable<any> {
     return this.http.get(this.url + 'find/' + id, this.httpOptions)
+  }
+  //Search movie by title
+  searchByTitle(title: string): Observable<Movies[]> {
+    return this.http.get<Movies[]>(this.url + 'search/' + title, this.httpOptions);
   }
   //Update an existing movie
   updateMovie(id: number, movies: Movies): Observable<any> {

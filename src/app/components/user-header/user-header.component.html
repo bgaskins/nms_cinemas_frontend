@@ -8,20 +8,31 @@
           <fa-icon [icon]="faBars" alt="close"></fa-icon>
         </div>
         <!-- Links to Register, Login, Tickets, Logout -->
-        <li class="top-link" (click)="toggleNavList('close')"><a *ngIf="!hardcodedAuthenticationService.IsUserLoggedIn()" routerLink="/now-playing"
+        <li class="top-link" (click)="toggleNavList('close')"><a *ngIf="hardcodedAuthenticationService.IsUserLoggedIn() || !hardcodedAuthenticationService.IsUserLoggedIn() && !hardcodedAuthenticationService.IsAdminLoggedIn()" routerLink="/now-playing"
           class="nav-link">Showtimes</a></li>
-        <li class="top-link" (click)="toggleNavList('close')"><a *ngIf="!hardcodedAuthenticationService.IsUserLoggedIn()" routerLink="/user-registration"
+        <li class="top-link" (click)="toggleNavList('close')"><a *ngIf="!hardcodedAuthenticationService.IsUserLoggedIn() && !hardcodedAuthenticationService.IsAdminLoggedIn()" routerLink="/user-registration"
             class="nav-link">Sign Up</a></li>
-        <li class="top-link" (click)="toggleNavList('close')"><a *ngIf="!hardcodedAuthenticationService.IsUserLoggedIn()" routerLink="/user-login"
+        <li class="top-link" (click)="toggleNavList('close')"><a *ngIf="!hardcodedAuthenticationService.IsUserLoggedIn() && !hardcodedAuthenticationService.IsAdminLoggedIn()" routerLink="/user-login"
             class="nav-link">Login</a></li>
-        <li class="top-link" (click)="toggleNavList('close')"><a *ngIf="hardcodedAuthenticationService.IsUserLoggedIn()" routerLink="/user-logout"
+        <li class="top-link" (click)="toggleNavList('close')"><a *ngIf="hardcodedAuthenticationService.IsUserLoggedIn() && !hardcodedAuthenticationService.IsAdminLoggedIn()" routerLink="/user-logout"
             class="nav-link">Logout</a></li>
+        <li class="top-link" (click)="toggleNavList('close')"><a *ngIf="hardcodedAuthenticationService.IsAdminLoggedIn() && !hardcodedAuthenticationService.IsUserLoggedIn()" routerLink="/admin-dashboard"
+            class="nav-link">Dashboard</a></li>
+        <li class="top-link" (click)="toggleNavList('close')"><a *ngIf="hardcodedAuthenticationService.IsAdminLoggedIn() && !hardcodedAuthenticationService.IsUserLoggedIn()" routerLink="/admin-create-movie"
+            class="nav-link">Add New Movie</a></li>
+        <li class="top-link" (click)="toggleNavList('close')"><a *ngIf="hardcodedAuthenticationService.IsAdminLoggedIn() && !hardcodedAuthenticationService.IsUserLoggedIn()" routerLink="/admin-logout"
+              class="nav-link">Logout</a></li>  
+
+              <!-----------Cart icon/link------------>
+        <li class="cart-status"><a *ngIf="!hardcodedAuthenticationService.IsAdminLoggedIn()"><app-cart-status></app-cart-status></a></li>
         
-        <div class="cart-status"><app-cart-status></app-cart-status></div>
         <div class="social-icons">
           <a href="#" class="insta-link" style="color:#ffffff"><fa-icon [icon]="faInstagram"></fa-icon></a>
-          <a href="#" class="insta-link" style="color:#ffffff"><fa-icon [icon]="faFacebook"></fa-icon></a>
-      </div>    
+          <a href="#" class="fb-link" style="color:#ffffff"><fa-icon [icon]="faFacebook"></fa-icon></a>
+        </div>   
+        
+        <li class="top-link" (click)="toggleNavList('close')"><a *ngIf="!hardcodedAuthenticationService.IsUserLoggedIn()" routerLink="/admin-login"
+          class="nav-link" style="font-size: 12px; color: #dddddd;" id="admin-link">Admin</a></li>
       </ul>
 
     <div class="open" (click)="toggleNavList('open')">

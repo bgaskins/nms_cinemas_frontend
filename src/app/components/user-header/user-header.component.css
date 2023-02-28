@@ -7,7 +7,7 @@ nav{
   height: 60px;
   background-color: #000000;
   font-family: 'Readex Pro', sans-serif;  
-  overflow-x: hidden; 
+  overflow: hidden; 
 
 }
 
@@ -17,7 +17,7 @@ nav{
   top: 5px;
   left: 16px; 
   display: flex;
-  color: #38c3ca;
+  color: #5ce1e6;
   font-size: 24px;
   font-weight: bold;
   text-decoration:none;
@@ -29,12 +29,13 @@ nav{
   display:flex;
   list-style-type: none;
   margin-top: 1em;
+  margin-left: 1em;
   padding: 0;
   gap: 1em;
 }
 
 .nav-list li a{
-  font-size: 1rem;
+  font-size: 18px;
   font-weight:100;
   color: #ffffff;
   text-decoration: none;
@@ -54,6 +55,11 @@ nav{
 .social-icons{
   display: none;
 }
+
+#admin-link {
+  display: none;
+}
+
 .open{
   position: absolute;
   top: 1em;
@@ -73,10 +79,9 @@ nav{
 
 /*------------ Cart --------------*/
 .cart-status {
-  display: flex;
   position: relative;
-  top: 6px;
-  left: 10px;
+  right: 3em;
+
 }
 
 
@@ -94,7 +99,6 @@ top: 1px;
 left: 1px;
 font-size:12px;
 }
-
 
 }
 
@@ -170,13 +174,13 @@ font-size:12px;
 
   .social-icons {
     position: relative;
-    left: 2em;
+    left: 1.5em;
     display: flex;
-    
   }
   
   .social-icons > a {
     margin: 5px;
+    font-size: 14px;
   }
   
 }

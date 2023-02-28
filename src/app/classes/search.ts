@@ -1,4 +1,9 @@
 export class Search {
-    id: number;
-    title: string;
+
+    constructor(
+        public id: number,
+        public title: string,
+
+    ) { }
+
 }

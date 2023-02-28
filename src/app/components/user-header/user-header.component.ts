@@ -12,6 +12,7 @@ import { faInstagram, faFacebook } from '@fortawesome/free-brands-svg-icons';
 export class UserHeaderComponent implements OnInit {
 
   isUserLoggedIn: boolean = false;
+  isAdminLoggedIn: boolean = false;
   faBars = faBars;
   faInstagram = faInstagram;
   faFacebook = faFacebook;
@@ -20,10 +21,11 @@ export class UserHeaderComponent implements OnInit {
 
   ngOnInit() {
     this.isUserLoggedIn = this.hardcodedAuthenticationService.IsUserLoggedIn();
+    this.isAdminLoggedIn = this.hardcodedAuthenticationService.IsAdminLoggedIn();
   }
 
-  toggleNavList(action: string) {// this function opening the side menu in the mobile screen
-
+  // this function opening the side menu in the mobile screen
+  toggleNavList(action: string) {
     action == 'open' ?
       document.querySelector('.nav-list')?.classList.add('active')
       : document.querySelector('.nav-list')?.classList.remove('active');

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder } from '@angular/forms';
 import { CartServiceService } from '../../services/cart-service.service';
+import { Cart } from '../../classes/cart';
+import { faCcVisa, faCcMastercard, faCcAmex, faCcDiscover } from '@fortawesome/free-brands-svg-icons';
+
 
 @Component({
   selector: 'app-checkout',
@@ -9,53 +11,27 @@ import { CartServiceService } from '../../services/cart-service.service';
 })
 export class CheckoutComponent implements OnInit {
 
-  checkoutFormGroup!: FormGroup;
 
   totalPrice: number = 0;
   totalQuantity: number = 0;
+  cartItems: Cart[] = [];
 
-  constructor(private formBuilder: FormBuilder, private cartService: CartServiceService) { }
+  // Credit card icons //
+  faCcVisa = faCcVisa;
+  faCcMastercard = faCcMastercard;
+  faCcAmex = faCcAmex;
+  faCcDiscover = faCcDiscover;
+
+  constructor(private cartService: CartServiceService) { }
 
   ngOnInit(): void {
 
     this.reviewCartDetails();
 
-    this.checkoutFormGroup = this.formBuilder.group({
-      user: this.formBuilder.group({
-        firstName: [''],
-        lastName: [''],
-        email: [''],
-      }),
-
-      mailingAddress: this.formBuilder.group({
-        address: [''],
-        city: [''],
-        state: [''],
-        country: [''],
-        zipcode: [''],
-      }),
-
-      billingAddress: this.formBuilder.group({
-        address: [''],
-        city: [''],
-        state: [''],
-        country: [''],
-        zipcode: [''],
-      }),
-
-      creditCard: this.formBuilder.group({
-        cardType: [''],
-        nameOnCard: [''],
-        cardNumber: [''],
-        securityCode: [''],
-        expMonth: [''],
-        expYear: [''],
-
-      })
-    });
   }
 
   reviewCartDetails() {
+    this.cartItems = this.cartService.cartItems;
     this.cartService.totalQuantity.subscribe(
       totalQuantity => this.totalQuantity = totalQuantity
     );
@@ -64,14 +40,4 @@ export class CheckoutComponent implements OnInit {
     );
   }
 
-
-  onSubmit() {
-
-    // Process checkout data here
-    console.log("Handling the submit button");
-
-    console.log(this.checkoutFormGroup.get('user')?.value);
-
-
-  }
 }

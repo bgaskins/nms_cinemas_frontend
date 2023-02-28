@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AdminDashboardComponent } from './components/admin-dashboard/admin-dashboard.component';
-import { AdminHeaderComponent } from './components/admin-header/admin-header.component';
 import { AdminLoginComponent } from './components/admin-login/admin-login.component';
 import { HomeComponent } from './components/home/home.component';
 import { UserHeaderComponent } from './components/user-header/user-header.component';
@@ -16,6 +15,7 @@ import { AdminCreateMovieComponent } from './components/admin-create-movie/admin
 import { ContactUsComponent } from './components/contact-us/contact-us.component';
 import { CartDetailsComponent } from './components/cart-details/cart-details.component';
 import { CheckoutComponent } from './components/checkout/checkout.component';
+import { SearchComponent } from './components/search/search.component';
 
 
 const routes: Routes = [
@@ -28,10 +28,10 @@ const routes: Routes = [
   { "path": "admin-dashboard", component: AdminDashboardComponent },
   { "path": "admin-update-movie/:id", component: AdminUpdateMovieComponent },
   { "path": "admin-create-movie", component: AdminCreateMovieComponent },
-  { "path": "admin-header", component: AdminHeaderComponent },
   { "path": 'admin-login', component: AdminLoginComponent },
   { "path": 'now-playing', component: NowPlayingComponent },
   { "path": 'checkout', component: CheckoutComponent },
+  { "path": 'search', component: SearchComponent },
   { "path": 'cart-details', component: CartDetailsComponent },
   { "path": "contact-us", component: ContactUsComponent },
   { "path": 'user-logout', component: UserLogoutComponent },

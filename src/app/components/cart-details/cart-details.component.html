@@ -1,73 +1,70 @@
-<div class="cart-details">
-    <div class="section-content section-content-p30">
-        <div class="container-fluid" id="cart-details">
+<div class="container"> <!--Cart table-->
 
-            <div *ngIf="cartItems.length > 0">
 
-                <table class="table table-bordered">
-                    <tr>
-                        <th width="50%">Ticket Details</th>
-                        <th width="30%"></th>
-                    </tr>
+    <!--Dynamic product details -->
+    <div *ngIf="cartItems.length > 0">
+        <table class="table">
+            <tr>
+                <th colspan="1">Title</th>
+                <th colspan="1">Showtime</th>
+                <th colspan="1">Price</th>
+            </tr>
 
-                    <tr *ngFor="let tempCartItem of cartItems">
-                        <td>
-                            <p>{{ tempCartItem.title }}</p>
-                            <p>{{ tempCartItem.ticket_price | currency: 'USD' }}</p>
-                        </td>
-                        <td>
-                            <div class="items">
-                                <label>Quantity:</label>
-
-                                <div class="row no-gutters">
-                                    <div class="col">
-                                        <button (click)="incrementQuantity(tempCartItem)" class="btn btn-primary btn-sm">
-                                            <fa-icon [icon]="faPlus"></fa-icon>
-                                        </button>
-                                    </div>
-
-                                    <div class="col ml-4 mr-2">
-                                        {{ tempCartItem.quantity }}
-                                    </div>
-
-                                    <div class="col">
-                                        <button (click)="decrementQuantity(tempCartItem)" class="btn btn-primary btn-sm">
-                                            <fa-icon [icon]="faMinus"></fa-icon>
-                                        </button>
-                                    </div>
-
-                                    <div class="col-8"></div>
-                                </div>
-
+            <!--Product info/image populates-->
+            <tr *ngFor="let cartItem of cartItems"> 
+               <td>
+                    <img src="{{ cartItem.image_url }}" class="img-responsive" width="150px" />
+                </td>
+                <td>
+                    <p>{{ cartItem.title }}</p>
+                    <p>{{ cartItem.showtime }}</p>
+                    <p>{{ cartItem.ticket_price | currency: 'USD' }}</p>
+                </td> 
+                <td>
+                    <div class="items">
+                        <label>Quantity:</label> 
+                        <div class="row">
+                            <div class="col">
+                                <button (click)="decrementQuantity(cartItem)" class="btn" id="minus">
+                                    <fa-icon [icon]="faMinus"></fa-icon>
+                                </button>
                             </div>
-                            <!--Ticket deleted from cart-->
-                            <button (click)="deleteFromCart(tempCartItem)" class="btn btn-primary btn-sm mt-2">Remove</button>
+                            <div class="col">
+                                {{ cartItem.quantity }}
+                            </div>
+                            <div class="col">
+                                <button (click)="incrementQuantity(cartItem)" class="btn" id="plus">
+                                    <fa-icon [icon]="faPlus"></fa-icon>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <button (click)="deleteFromCart(cartItem)" class="btn btn-primary btn-sm">
+                            Delete
+                        </button>
+                    </div>
+                    <p class="mt-2">Subtotal: {{ cartItem.quantity * cartItem.ticket_price | currency: 'USD' }}</p>
+                </td>
+            </tr>
+            <!-- Order summary -->
+            <tr>
+                <td colspan="2" id="payment-summary"></td>
+                <td id="total">
+                    <p><strong>Total Quantity:</strong> {{ totalQuantity }}</p>
+                    <p>Shipping: Free</p>
+                    <p><strong>Total Price:</strong> {{ totalPrice | currency: 'USD' }}</p>
+                    <a routerLink="/checkout" class="btn button">Checkout</a>
+                </td>
+            </tr>
 
-                            <p class="mt-2">Subtotal: {{ tempCartItem.quantity * tempCartItem.ticket_price | currency: 'USD' }}</p>
-                        </td>
-                    </tr>
+        </table>
 
-                    <tr>
-                        <td colspan="2"></td>
-                        <td style="font-weight: bold">
-                            <p>Total Quantity: {{ totalQuantity }}</p>
-                            <p>Shipping: FREE</p>
-                            <p>Total Price: {{ totalPrice | currency: 'USD' }}</p>
-                            <a routerLink="/checkout" class="btn btn-primary">Checkout</a>
-                        </td>
-                    </tr>
-
-                </table>
-
-            </div>
-
-            <!-- Empty message when cart is empty cart -->
-            <div class="container p-5" id="empty">
-                <div *ngIf="cartItems.length == 0" class="alert alert-warning col-md-12" role="alert">
-                    <h6>Your shopping cart is empty.</h6>
-                </div>
-            </div>  
-
-        </div>
     </div>
+
+    <!-- If the cart is empty a message occurs -->
+    <div *ngIf="cartItems.length == 0" class="alert alert-warning col-md-8" role="alert">
+        Your shopping cart is empty. 
     </div>
+
+</div>

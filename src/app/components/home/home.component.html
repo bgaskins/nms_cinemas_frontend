@@ -13,17 +13,20 @@
         </a>
 </div>
 
-<div class="container" id="now-playing-list">
-    <p>Now Playing:</p>
-    <ul>
-        <li *ngFor="let movie of movies"><fa-icon [icon]="faFilm"></fa-icon>
-            {{ movie.title }}<br>{{ movie.showtime }}</li>
-    </ul>
-</div>
-    <!--Movie Features-->
+    <!--Search bar-->
+    <!--<div class="search-box"><app-search></app-search></div>-->
 
-<div class="container-fluid">
-        <div class="featured">
+    <div id="now-playing-list">
+        <p>Now Playing:</p> 
+        <ul>
+            <li *ngFor="let movie of movies"><fa-icon [icon]="faFilm"></fa-icon>
+                {{ movie.title }}<br>{{ movie.showtime }}</li>
+        </ul>
+    
+    
+    <!--Movie Features-->
+    <div class="container-fluid">
+        <div id="featured">
             <div class="row p-5">
                 <div class="col">
                     <div class="card">
@@ -82,7 +85,7 @@
             </div>
         </div>
     </div>
-
+    <!--Phone number input for text alerts, etc.-->
     <div class="container-fluid" id="text-alert">
         <div class="alert-content">
         <h4>Get Movie Alerts</h4>
@@ -90,7 +93,7 @@
             <div class="phone">
                 <form class="number">
                     <input class="add-number" type="phone" placeholder="555-555-5555">
-                    <button class="btn" type="button">Submit</button>
+                    <button class="btn btn-sm" type="button">Submit</button>
                 </form>
             </div>
     </div>    

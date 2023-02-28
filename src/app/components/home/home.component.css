@@ -30,6 +30,11 @@ img {
     padding: 1em;
 }
 
+.search-box {
+    position: relative;
+    bottom: 6em;
+}
+
 h6 {
     font-weight: 400;
 }
@@ -47,7 +52,8 @@ span {
 /*--------- Now Playing movie list---------*/
 
 #now-playing-list {
-    position:relative;
+    height: 100%;
+    
 }
 
 #now-playing-list > p {
@@ -58,6 +64,8 @@ span {
 #now-playing-list > p, ul {
     position: relative;
     bottom: 4em;
+    left: 4em;
+    width: 80%;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     box-sizing: border-box;
@@ -67,7 +75,7 @@ span {
 #now-playing-list > ul > li {
     font-weight: 300;
     width: 90%;
-    margin-bottom: 2em;
+    margin-bottom: 1.5em;
     list-style: none;
     text-decoration: none;
 }
