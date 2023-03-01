@@ -21,7 +21,6 @@ Frontend: HTML5, CSS5, Typescript, Angular, Bootstrap
 <br>
 <h4>--- Demos ---</h4>
 
-
 https://user-images.githubusercontent.com/96695276/222254451-745a66df-6e25-44a2-b3d0-520dba8f93b4.mp4
 
 <br>
