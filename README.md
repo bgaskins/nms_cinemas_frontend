@@ -2,7 +2,7 @@
 
 A dynamic and responsive movie ticket ordering webapp that allows customers to purchase their movie tickets on any device.
 
-Features:
+<strong>Features:</strong><br>
 -User and Admin login/logout (Hardcoded validation)<br>
 -Adds, updates, deletes, and retrieves movies from a database<br>
 -Shopping features<br>
@@ -20,7 +20,6 @@ Frontend: HTML5, CSS5, Typescript, Angular, Bootstrap
 <br>
 <br>
 <h4>--- Demos ---</h4>
-
 
 
 https://user-images.githubusercontent.com/96695276/222254451-745a66df-6e25-44a2-b3d0-520dba8f93b4.mp4
@@ -42,7 +41,6 @@ https://user-images.githubusercontent.com/96695276/222255597-dbfd90ba-a5fe-4818-
 <br>
 <br>
 <br>
-
 <img width="70%" alt="home-1" src="https://user-images.githubusercontent.com/96695276/222257897-4ca6aa7e-a71e-4d24-b901-598654047b2c.png">
 <img width="70%" alt="home-2" src="https://user-images.githubusercontent.com/96695276/222262763-757b31f1-1e8b-4fcf-a9b6-51c43763420c.png">
 <img width="70%" alt="home-3" src="https://user-images.githubusercontent.com/96695276/222257948-b1613d51-20e7-45ff-8797-c54ba653e591.png">
@@ -103,15 +101,6 @@ https://user-images.githubusercontent.com/96695276/222255597-dbfd90ba-a5fe-4818-
 <br>
 <br>
 <br>Checkout form takes user information for payment. An order summary is availabe.
-<br>
-<br>
-<br>
-<br>
-<br>
-<img width="70%" alt="contact-us" src="https://user-images.githubusercontent.com/96695276/222259800-c3e1f5bd-f4be-49ca-97d9-a9012fb44a1e.png">
-<br>
-<br>
-<br>NMS Cinemas contact.
 <br>
 <br>
 <br>
